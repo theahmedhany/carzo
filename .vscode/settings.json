@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "algorithm": "cpp",
+    "chrono": "cpp",
+    "limits": "cpp",
+    "utility": "cpp",
+    "valarray": "cpp",
+    "xutility": "cpp",
+    "filesystem": "cpp",
+    "format": "cpp",
+    "xstring": "cpp"
+  }
+}

@@ -1,0 +1,151 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carzo/core/widgets/custom_favorite_button.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
+
+class CustomPopularCarCard extends StatelessWidget {
+  const CustomPopularCarCard({
+    super.key,
+    required this.title,
+    required this.image,
+    required this.type,
+    required this.price,
+    required this.press,
+    required this.itemId,
+    required this.location,
+  });
+
+  final String title, image, type, price, location;
+  final VoidCallback press;
+  final String itemId;
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoButton(
+      onPressed: press,
+      padding: EdgeInsets.zero,
+      child: Container(
+        margin: EdgeInsets.only(right: 12.r),
+        width: 320.w,
+        height: 110.h,
+        decoration: ShapeDecoration(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(width: 1.w, color: AppColors.kMainGreyColor),
+            borderRadius: BorderRadius.circular(15),
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(right: 14.r),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors.kSecondaryGreyColor,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: CachedNetworkImage(
+                    imageUrl: image,
+                    width: 155.w,
+                    height: double.infinity,
+                    fit: BoxFit.fill,
+                    placeholder: (context, url) {
+                      return Center(child: CustomProgressIndicator());
+                    },
+                    errorWidget: (context, url, error) {
+                      return Center(
+                        child: Image.asset(
+                          'assets/master/carzo_logo.png',
+                          width: 100.w,
+                          fit: BoxFit.contain,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.r),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      title.length > 10
+                          ? '${title.substring(0, 10)}...'
+                          : title,
+                      maxLines: 1,
+                      style: AppFonts.font14DarkSemiBold.copyWith(
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          'assets/icons/car_status.svg',
+                          colorFilter: const ColorFilter.mode(
+                            Color(0xff767676),
+                            BlendMode.srcIn,
+                          ),
+                          width: 18.w,
+                        ),
+                        horizontalSpace(8),
+                        Text(
+                          type,
+                          maxLines: 1,
+                          style: AppFonts.font12GreyRegular.copyWith(
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          'assets/icons/money.svg',
+                          colorFilter: const ColorFilter.mode(
+                            Color(0xff767676),
+                            BlendMode.srcIn,
+                          ),
+                          width: 18.w,
+                        ),
+                        horizontalSpace(8),
+                        Text(
+                          price.length > 10
+                              ? '${price.substring(0, 10)}...'
+                              : price,
+                          maxLines: 1,
+                          style: AppFonts.font12GreyRegular.copyWith(
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              CustomFavoriteButton(
+                itemId: itemId,
+                name: title,
+                condition: type,
+                dealershipName: location,
+                price: int.tryParse(price) ?? 0,
+                imageUrl: image,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
