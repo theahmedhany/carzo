@@ -1,17 +1,18 @@
-import 'package:carzo/core/widgets/custom_grid_view_loading.dart';
-import 'package:carzo/core/widgets/no_cars_available.dart';
-import 'package:carzo/features/search/manager/search_cars_cubit.dart';
-import 'package:carzo/features/search/manager/search_cars_state.dart';
-import 'package:carzo/features/search/presentation/widgets/custom_search_grid_view.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../../../home/presentation/widgets/custom_home_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_grid_view_loading.dart';
+import '../../../../core/widgets/no_cars_available.dart';
+import '../../../home/presentation/widgets/custom_home_app_bar.dart';
+import '../../data/models/search_cars_model.dart';
+import '../../manager/search_cars_cubit.dart';
+import '../../manager/search_cars_state.dart';
 import '../widgets/custom_main_search_bar.dart';
 import '../widgets/custom_search_brand_list.dart';
-import '../../data/models/search_cars_model.dart';
+import '../widgets/custom_search_grid_view.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});

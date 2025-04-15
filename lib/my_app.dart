@@ -1,12 +1,13 @@
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/core/widgets/no_internet_connection.dart';
-import 'package:carzo/features/favorite/manager/favorite_cubit.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_offline/flutter_offline.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'core/helpers/constants.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_offline/flutter_offline.dart';
+import 'core/widgets/no_internet_connection.dart';
+import 'features/favorite/manager/favorite_cubit.dart';
 
 class MyApp extends StatelessWidget {
   final AppRouter appRouter;

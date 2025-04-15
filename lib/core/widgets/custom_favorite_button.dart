@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/features/favorite/data/models/favorite_car_model.dart';
-import 'package:carzo/features/favorite/manager/favorite_cubit.dart';
+
+import '../../features/favorite/data/models/favorite_car_model.dart';
+import '../../features/favorite/manager/favorite_cubit.dart';
+import '../theming/app_colors.dart';
 
 class CustomFavoriteButton extends StatelessWidget {
   final String itemId;

@@ -1,7 +1,8 @@
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../helpers/spacing.dart';
+import '../theming/app_fonts.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({super.key, required this.error, required this.space});

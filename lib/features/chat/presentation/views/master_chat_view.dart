@@ -1,9 +1,10 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/widgets/show_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/show_snack_bar.dart';
 import '../../../home/presentation/widgets/custom_home_app_bar.dart';
 import '../widgets/custom_master_chat_view_card.dart';
 

@@ -1,9 +1,10 @@
-import 'package:carzo/core/networking/api_error_model.dart';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/features/insurance_companies/data/models/insurance_companies_model.dart';
-import 'package:carzo/features/insurance_companies/data/repos/insurance_companies_repo.dart';
-import 'package:carzo/features/insurance_companies/manager/insurance_companies_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../core/networking/api_error_model.dart';
+import '../../../core/networking/api_network_exceptions.dart';
+import '../data/models/insurance_companies_model.dart';
+import '../data/repos/insurance_companies_repo.dart';
+import 'insurance_companies_state.dart';
 
 class InsuranceCompaniesCubit
     extends Cubit<InsuranceCompaniesState<List<InsuranceCompaniesModel>>> {

@@ -1,8 +1,8 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/widgets/custom_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/helpers/extensions.dart';
+import '../../../core/widgets/custom_alert_dialog.dart';
 import '../data/models/chat_message_model.dart';
 import '../data/services/gemini_service.dart';
 import 'chat_state.dart';

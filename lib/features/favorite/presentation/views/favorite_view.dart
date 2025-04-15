@@ -1,10 +1,11 @@
-import 'package:carzo/core/theming/app_fonts.dart';
-import 'package:carzo/features/favorite/data/models/favorite_car_model.dart';
-import 'package:carzo/features/favorite/manager/favorite_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_fonts.dart';
 import '../../../home/presentation/widgets/custom_home_app_bar.dart';
+import '../../data/models/favorite_car_model.dart';
+import '../../manager/favorite_cubit.dart';
 import '../widgets/favorite_cars_grid_view.dart';
 
 class FavoriteView extends StatefulWidget {

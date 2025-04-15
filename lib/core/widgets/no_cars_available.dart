@@ -1,7 +1,8 @@
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../helpers/spacing.dart';
+import '../theming/app_fonts.dart';
 
 class NoCarsAvailable extends StatelessWidget {
   const NoCarsAvailable({super.key});

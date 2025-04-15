@@ -1,8 +1,8 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/helpers/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
 import 'custom_home_brands_section_icon.dart';
 
 class CustomHomeBrandsSectionList extends StatelessWidget {

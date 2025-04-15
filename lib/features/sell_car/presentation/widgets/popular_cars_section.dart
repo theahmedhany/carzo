@@ -1,16 +1,17 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/features/recommend_for_you/data/models/all_cars_model.dart';
-import 'package:carzo/features/recommend_for_you/manager/all_cars_cubit.dart';
-import 'package:carzo/features/recommend_for_you/manager/all_cars_state.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/custom_sell_car_recommended_error.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/custom_sell_car_recommended_shimmer_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/widgets/custom_popular_cars_section_title.dart';
+import '../../../recommend_for_you/data/models/all_cars_model.dart';
+import '../../../recommend_for_you/manager/all_cars_cubit.dart';
+import '../../../recommend_for_you/manager/all_cars_state.dart';
 import 'custom_popular_car_card.dart';
+import 'custom_sell_car_recommended_error.dart';
+import 'custom_sell_car_recommended_shimmer_loading.dart';
 
 class PopularCarsSection extends StatelessWidget {
   const PopularCarsSection({super.key});

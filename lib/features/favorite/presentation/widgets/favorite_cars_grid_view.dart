@@ -1,10 +1,10 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/features/favorite/data/models/favorite_car_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
+import '../../data/models/favorite_car_model.dart';
 import 'custom_favorite_car_card.dart';
 
 class FavoriteCarsGridView extends StatelessWidget {

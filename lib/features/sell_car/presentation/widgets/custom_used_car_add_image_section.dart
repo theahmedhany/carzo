@@ -1,14 +1,15 @@
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
-import 'package:carzo/core/widgets/custom_master_icon_circle.dart';
-import 'package:carzo/features/sell_car/manager/sell_used_car/sell_used_car_cubit.dart';
-import 'package:carzo/features/sell_car/manager/sell_used_car/sell_used_car_state.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/custom_car_add_image_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_master_icon_circle.dart';
+import '../../manager/sell_used_car/sell_used_car_cubit.dart';
+import '../../manager/sell_used_car/sell_used_car_state.dart';
+import 'custom_car_add_image_box.dart';
 
 class CustomUsedCarAddImageSection extends StatelessWidget {
   const CustomUsedCarAddImageSection({super.key});

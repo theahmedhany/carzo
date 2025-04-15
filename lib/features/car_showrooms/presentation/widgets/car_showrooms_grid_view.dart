@@ -1,14 +1,15 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/core/widgets/custom_grid_view_loading.dart';
-import 'package:carzo/core/widgets/error_page.dart';
-import 'package:carzo/features/car_showrooms/data/models/showroom_cars/showroom_cars_model.dart';
-import 'package:carzo/features/car_showrooms/manager/showroom_cars/showroom_cars_cubit.dart';
-import 'package:carzo/features/car_showrooms/manager/showroom_cars/showroom_cars_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/widgets/custom_grid_view_loading.dart';
+import '../../../../core/widgets/error_page.dart';
+import '../../data/models/showroom_cars/showroom_cars_model.dart';
+import '../../manager/showroom_cars/showroom_cars_cubit.dart';
+import '../../manager/showroom_cars/showroom_cars_state.dart';
 import 'car_showrooms_car_card.dart';
 
 class CarShowroomsGridView extends StatelessWidget {

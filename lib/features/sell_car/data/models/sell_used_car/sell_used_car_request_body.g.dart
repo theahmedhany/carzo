@@ -10,7 +10,7 @@ SellUsedCarRequestBody _$SellUsedCarRequestBodyFromJson(
   Map<String, dynamic> json,
 ) => SellUsedCarRequestBody(
   Images: (json['Images'] as List<dynamic>).map((e) => e as String).toList(),
-  Fuel: json['Fuel'] as String,
+  FuelType: json['FuelType'] as String,
   Mileage: json['Mileage'] as String,
   Description: json['Description'] as String,
   City: json['City'] as String,
@@ -34,7 +34,7 @@ Map<String, dynamic> _$SellUsedCarRequestBodyToJson(
   'Price': instance.Price,
   'Model': instance.Model,
   'Condition': instance.Condition,
-  'Fuel': instance.Fuel,
+  'FuelType': instance.FuelType,
   'Transmission': instance.Transmission,
   'Color': instance.Color,
   'Year': instance.Year,

@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/widgets/custom_alert_dialog.dart';
-import 'package:carzo/features/sell_car/data/models/sell_used_car/sell_used_car_request_body.dart';
-import 'package:carzo/features/sell_car/data/repos/sell_used_car_repo.dart';
-import 'package:carzo/features/sell_car/manager/sell_used_car/sell_used_car_state.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/widgets/custom_alert_dialog.dart';
+import '../../data/models/sell_used_car/sell_used_car_request_body.dart';
+import '../../data/repos/sell_used_car_repo.dart';
+import 'sell_used_car_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -156,7 +156,7 @@ class SellUsedCarCubit extends Cubit<SellUsedCarState> {
         Phone: phoneController.text.trim(),
         Location: locationController.text.trim(),
         Year: yearController.text.trim(),
-        Fuel: fuelController.text.trim(),
+        FuelType: fuelController.text.trim(),
         Transmission: transmissionController.text.trim(),
         Color: colorController.text.trim(),
         Mileage: mileageController.text.trim(),

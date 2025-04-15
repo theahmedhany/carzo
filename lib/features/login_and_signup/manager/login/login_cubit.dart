@@ -1,9 +1,9 @@
-import 'package:carzo/core/helpers/shared_pref_helper.dart';
-import 'package:carzo/core/networking/dio_factory.dart';
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/features/login_and_signup/data/models/login/login_request_body.dart';
-import 'package:carzo/features/login_and_signup/data/repos/login_repo.dart';
-import 'package:carzo/features/login_and_signup/manager/login/login_state.dart';
+import '../../../../core/helpers/shared_pref_helper.dart';
+import '../../../../core/networking/dio_factory.dart';
+import '../../../../core/helpers/constants.dart';
+import '../../data/models/login/login_request_body.dart';
+import '../../data/repos/login_repo.dart';
+import 'login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

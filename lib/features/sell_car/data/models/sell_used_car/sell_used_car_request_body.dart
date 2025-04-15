@@ -9,7 +9,7 @@ class SellUsedCarRequestBody {
   final String Price;
   final String Model;
   final String Condition;
-  final String Fuel;
+  final String FuelType;
   final String Transmission;
   final String Color;
   final String Year;
@@ -22,7 +22,7 @@ class SellUsedCarRequestBody {
 
   SellUsedCarRequestBody({
     required this.Images,
-    required this.Fuel,
+    required this.FuelType,
     required this.Mileage,
     required this.Description,
     required this.City,

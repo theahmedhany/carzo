@@ -1,9 +1,10 @@
-import 'package:carzo/core/networking/api_error_model.dart';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/features/car_showrooms/data/models/showrooms/showrooms_model.dart';
-import 'package:carzo/features/car_showrooms/data/repos/showrooms_repo.dart';
-import 'package:carzo/features/car_showrooms/manager/showrooms/showrooms_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/networking/api_error_model.dart';
+import '../../../../core/networking/api_network_exceptions.dart';
+import '../../data/models/showrooms/showrooms_model.dart';
+import '../../data/repos/showrooms_repo.dart';
+import 'showrooms_state.dart';
 
 class ShowroomsCubit extends Cubit<ShowroomsState<List<ShowroomsModel>>> {
   final ShowroomsRepo showroomsRepo;

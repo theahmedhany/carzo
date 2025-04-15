@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carzo/core/widgets/custom_favorite_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_favorite_button.dart';
 import '../../../../core/widgets/custom_progress_indicator.dart';
 
 class CustomPopularCarCard extends StatelessWidget {

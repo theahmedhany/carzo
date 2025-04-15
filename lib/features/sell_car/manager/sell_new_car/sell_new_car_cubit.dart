@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:bloc/bloc.dart';
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/widgets/custom_alert_dialog.dart';
-import 'package:carzo/features/sell_car/data/models/sell_new_car/sell_new_car_request_body.dart';
-import 'package:carzo/features/sell_car/data/repos/sell_new_car_repo.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/widgets/custom_alert_dialog.dart';
+import '../../data/models/sell_new_car/sell_new_car_request_body.dart';
+import '../../data/repos/sell_new_car_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'sell_new_car_state.dart';

@@ -1,13 +1,14 @@
-import 'package:carzo/core/helpers/launch_custom_url.dart';
-import 'package:carzo/core/widgets/show_snack_bar.dart';
-import 'package:carzo/features/car_details/data/models/car_details_model.dart';
-import 'package:carzo/features/car_details/presentation/widgets/custom_details_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../../core/helpers/launch_custom_url.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/show_snack_bar.dart';
+import '../../data/models/car_details_model.dart';
 import 'custom_contact_information_card.dart';
+import 'custom_details_alert_dialog.dart';
 
 class CustomBuyNowModelBottomSheet extends StatelessWidget {
   const CustomBuyNowModelBottomSheet({super.key, required this.details});

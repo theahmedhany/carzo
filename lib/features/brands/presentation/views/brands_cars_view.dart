@@ -1,8 +1,9 @@
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/widgets/custom_master_app_bar.dart';
-import 'package:carzo/features/brands/presentation/widgets/brands_cars_grid_view.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_master_app_bar.dart';
+import '../widgets/brands_cars_grid_view.dart';
 
 class BrandsCarsView extends StatelessWidget {
   const BrandsCarsView({super.key, required this.brandName});

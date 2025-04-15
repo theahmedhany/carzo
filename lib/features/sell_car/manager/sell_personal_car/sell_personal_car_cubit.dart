@@ -1,16 +1,16 @@
 import 'dart:io';
 
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/helpers/shared_pref_helper.dart';
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/core/widgets/custom_alert_dialog.dart';
-import 'package:carzo/features/sell_car/data/models/sell_personal_car/sell_personal_car_request_body.dart';
-import 'package:carzo/features/sell_car/data/repos/sell_personal_car_repo.dart';
-import 'package:carzo/features/sell_car/manager/sell_personal_car/sell_personal_car_state.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/helpers/shared_pref_helper.dart';
+import '../../../../core/widgets/custom_alert_dialog.dart';
+import '../../data/models/sell_personal_car/sell_personal_car_request_body.dart';
+import '../../data/repos/sell_personal_car_repo.dart';
+import 'sell_personal_car_state.dart';
 
 class SellPersonalCarCubit extends Cubit<SellPersonalCarState> {
   SellPersonalCarCubit(this.sellPersonalCarRepo)

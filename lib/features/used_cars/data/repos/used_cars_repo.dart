@@ -1,7 +1,7 @@
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/core/networking/api_result.dart';
-import 'package:carzo/core/networking/api_services.dart';
-import 'package:carzo/features/used_cars/data/models/used_car_model.dart';
+import '../../../../core/networking/api_network_exceptions.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/networking/api_services.dart';
+import '../models/used_car_model.dart';
 
 class UsedCarsRepo {
   final ApiServices apiServices;

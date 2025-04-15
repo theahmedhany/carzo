@@ -1,12 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/widgets/custom_progress_indicator.dart';
-import 'package:carzo/features/rescue_companies/data/models/rescue_companies_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/helpers/extensions.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
+import '../../data/models/rescue_companies_model.dart';
 
 class RescueCompaniesCard extends StatelessWidget {
   const RescueCompaniesCard({

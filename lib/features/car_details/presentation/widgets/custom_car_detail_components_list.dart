@@ -1,6 +1,7 @@
-import 'package:carzo/features/car_details/data/models/car_details_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../data/models/car_details_model.dart';
 import 'custom_car_detail_component_card.dart';
 
 class CustomCarDetailComponentsList extends StatelessWidget {

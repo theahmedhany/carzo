@@ -1,10 +1,11 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_fonts.dart';
 
 class CustomDetailsAlertDialog extends StatelessWidget {
   final String dialogHeader;

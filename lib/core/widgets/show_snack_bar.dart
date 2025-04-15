@@ -1,6 +1,7 @@
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
 import 'package:flutter/material.dart';
+
+import '../theming/app_colors.dart';
+import '../theming/app_fonts.dart';
 
 void showSnackBar(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(

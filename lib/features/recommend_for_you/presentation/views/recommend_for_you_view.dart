@@ -1,17 +1,18 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/core/widgets/custom_list_view_loading.dart';
-import 'package:carzo/core/widgets/error_page.dart';
-import 'package:carzo/features/recommend_for_you/manager/all_cars_cubit.dart';
-import 'package:carzo/features/recommend_for_you/manager/all_cars_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_list_view_loading.dart';
 import '../../../../core/widgets/custom_master_app_bar.dart';
-import '../widgets/custom_recommend_for_you_card.dart';
+import '../../../../core/widgets/error_page.dart';
 import '../../data/models/all_cars_model.dart';
+import '../../manager/all_cars_cubit.dart';
+import '../../manager/all_cars_state.dart';
+import '../widgets/custom_recommend_for_you_card.dart';
 
 class RecommendForYouView extends StatelessWidget {
   const RecommendForYouView({super.key});

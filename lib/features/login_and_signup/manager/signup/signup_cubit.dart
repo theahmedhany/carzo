@@ -1,8 +1,9 @@
-import 'package:carzo/features/login_and_signup/data/repos/signup_repo.dart';
-import 'package:carzo/features/login_and_signup/manager/signup/signup_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../data/models/signup/signup_request_body.dart';
+import '../../data/repos/signup_repo.dart';
+import 'signup_state.dart';
 
 class SignupCubit extends Cubit<SignupState> {
   final SignupRepo _signupRepo;

@@ -1,12 +1,12 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/widgets/custom_alert_dialog.dart';
-import 'package:carzo/core/widgets/main_loading_indicator.dart';
-import 'package:carzo/features/login_and_signup/manager/signup/signup_cubit.dart';
-import 'package:carzo/features/login_and_signup/manager/signup/signup_state.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_alert_dialog.dart';
+import '../../../../core/widgets/main_loading_indicator.dart';
+import '../../manager/signup/signup_cubit.dart';
+import '../../manager/signup/signup_state.dart';
 
 class SignupBlocListener extends StatelessWidget {
   const SignupBlocListener({super.key});

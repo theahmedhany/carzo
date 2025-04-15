@@ -1,18 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carzo/core/helpers/launch_custom_url.dart';
-import 'package:carzo/core/widgets/custom_company_details_alert.dart';
-import 'package:carzo/core/widgets/custom_progress_indicator.dart';
-import 'package:carzo/core/widgets/custom_company_details_data_box.dart';
-import 'package:carzo/core/widgets/show_snack_bar.dart';
-import 'package:carzo/features/insurance_companies/data/models/insurance_companies_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../core/helpers/launch_custom_url.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_company_details_alert.dart';
+import '../../../../core/widgets/custom_company_details_data_box.dart';
 import '../../../../core/widgets/custom_master_app_bar.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
+import '../../../../core/widgets/show_snack_bar.dart';
+import '../../data/models/insurance_companies_model.dart';
 
 class InsuranceCompaniesDetailsView extends StatelessWidget {
   const InsuranceCompaniesDetailsView({super.key, required this.company});

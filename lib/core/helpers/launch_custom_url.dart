@@ -1,5 +1,6 @@
-import 'package:carzo/core/widgets/show_snack_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../widgets/show_snack_bar.dart';
 
 Future<void> launchCustomUrl(context, String? url) async {
   if (url != null) {

@@ -1,17 +1,18 @@
-import 'package:carzo/core/helpers/app_regex.dart';
-import 'package:carzo/features/login_and_signup/manager/signup/signup_cubit.dart';
-import 'package:carzo/features/login_and_signup/presentation/widgets/password_validations.dart';
-import 'package:carzo/features/login_and_signup/presentation/widgets/signup_bloc_listener.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../manager/signup/signup_cubit.dart';
 import '../widgets/custom_master_text_field.dart';
+import '../widgets/password_validations.dart';
+import '../widgets/signup_bloc_listener.dart';
 
 class SignupView extends StatefulWidget {
   const SignupView({super.key});

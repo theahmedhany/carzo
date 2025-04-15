@@ -1,18 +1,19 @@
-import 'package:carzo/core/helpers/app_regex.dart';
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/features/sell_car/manager/sell_new_car/sell_new_car_cubit.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/custom_new_car_add_image_section.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/custom_sell_note_alert.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/sell_new_car_bloc_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/helpers/app_regex.dart';
+import '../../../../core/helpers/extensions.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
 import '../../../../core/widgets/custom_master_app_bar.dart';
+import '../../manager/sell_new_car/sell_new_car_cubit.dart';
+import '../widgets/custom_new_car_add_image_section.dart';
 import '../widgets/custom_sell_button.dart';
 import '../widgets/custom_sell_car_text_field.dart';
+import '../widgets/custom_sell_note_alert.dart';
+import '../widgets/sell_new_car_bloc_listener.dart';
 
 class SellNewCarsView extends StatefulWidget {
   const SellNewCarsView({super.key});

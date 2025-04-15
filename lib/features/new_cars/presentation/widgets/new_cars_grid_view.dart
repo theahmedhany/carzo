@@ -1,14 +1,15 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/core/widgets/custom_grid_view_loading.dart';
-import 'package:carzo/core/widgets/error_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:carzo/features/new_cars/manager/new_cars_cubit.dart';
-import 'package:carzo/features/new_cars/manager/new_cars_state.dart';
-import 'package:carzo/features/new_cars/data/models/new_car_model.dart';
+
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/widgets/custom_grid_view_loading.dart';
+import '../../../../core/widgets/error_page.dart';
+import '../../data/models/new_car_model.dart';
+import '../../manager/new_cars_cubit.dart';
+import '../../manager/new_cars_state.dart';
 import 'custom_new_car_card.dart';
 
 class NewCarsGridView extends StatelessWidget {

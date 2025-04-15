@@ -1,16 +1,16 @@
-import 'package:carzo/core/helpers/app_regex.dart';
-import 'package:carzo/features/login_and_signup/manager/login/login_cubit.dart';
-import 'package:carzo/features/login_and_signup/presentation/widgets/login_bloc_listener.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../manager/login/login_cubit.dart';
+import '../widgets/login_bloc_listener.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

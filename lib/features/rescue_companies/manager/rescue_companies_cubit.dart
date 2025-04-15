@@ -1,9 +1,10 @@
-import 'package:carzo/core/networking/api_error_model.dart';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/features/rescue_companies/data/models/rescue_companies_model.dart';
-import 'package:carzo/features/rescue_companies/data/repos/rescue_companies_repo.dart';
-import 'package:carzo/features/rescue_companies/manager/rescue_companies_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../core/networking/api_error_model.dart';
+import '../../../core/networking/api_network_exceptions.dart';
+import '../data/models/rescue_companies_model.dart';
+import '../data/repos/rescue_companies_repo.dart';
+import 'rescue_companies_state.dart';
 
 class RescueCompaniesCubit
     extends Cubit<RescueCompaniesState<List<RescueCompaniesModel>>> {

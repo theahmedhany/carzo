@@ -1,7 +1,3 @@
-import 'package:carzo/core/helpers/shared_pref_helper.dart';
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/core/widgets/custom_alert_dialog.dart';
-import 'package:carzo/core/widgets/show_snack_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,12 +5,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../core/helpers/constants.dart';
 import '../../../../core/helpers/extensions.dart';
+import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_alert_dialog.dart';
 import '../../../../core/widgets/custom_master_app_bar.dart';
+import '../../../../core/widgets/show_snack_bar.dart';
 import '../widgets/custom_personal_details_list_tile.dart';
 
 class PersonalDetailsView extends StatelessWidget {

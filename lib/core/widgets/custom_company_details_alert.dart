@@ -1,10 +1,11 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../helpers/extensions.dart';
+import '../helpers/spacing.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_fonts.dart';
 
 class CustomCompanyDetailsAlert extends StatelessWidget {
   final String dialogHeader;

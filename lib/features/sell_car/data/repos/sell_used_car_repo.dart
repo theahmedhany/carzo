@@ -1,12 +1,14 @@
 import 'dart:io';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/core/networking/api_result.dart';
-import 'package:carzo/core/networking/api_services.dart';
-import 'package:carzo/features/sell_car/data/models/sell_used_car/sell_used_car_request_body.dart';
-import 'package:carzo/features/sell_car/data/models/sell_used_car/sell_used_car_response.dart';
+
 import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:mime_type/mime_type.dart';
+
+import '../../../../core/networking/api_network_exceptions.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/networking/api_services.dart';
+import '../models/sell_used_car/sell_used_car_request_body.dart';
+import '../models/sell_used_car/sell_used_car_response.dart';
 
 class SellUsedCarRepo {
   final ApiServices _apiServices;

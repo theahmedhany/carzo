@@ -1,9 +1,10 @@
-import 'package:carzo/core/networking/api_error_model.dart';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/features/car_details/data/models/car_details_model.dart';
-import 'package:carzo/features/car_details/data/repos/car_details_repo.dart';
-import 'package:carzo/features/car_details/manager/car_details_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../core/networking/api_error_model.dart';
+import '../../../core/networking/api_network_exceptions.dart';
+import '../data/models/car_details_model.dart';
+import '../data/repos/car_details_repo.dart';
+import 'car_details_state.dart';
 
 class CarDetailsCubit extends Cubit<CarDetailsState<CarDetailsModel>> {
   final CarDetailsRepo carDetailsRepo;

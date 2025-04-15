@@ -1,15 +1,16 @@
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/widgets/custom_companies_shimmer_loading.dart';
-import 'package:carzo/core/widgets/error_page.dart';
-import 'package:carzo/features/maintenance_companies/data/models/maintenance_companies_model.dart';
-import 'package:carzo/features/maintenance_companies/manager/maintenance_companies_cubit.dart';
-import 'package:carzo/features/maintenance_companies/manager/maintenance_companies_state.dart';
-import 'package:carzo/features/maintenance_companies/presentation/widgets/maintenance_companies_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_companies_shimmer_loading.dart';
 import '../../../../core/widgets/custom_master_app_bar.dart';
+import '../../../../core/widgets/error_page.dart';
+import '../../data/models/maintenance_companies_model.dart';
+import '../../manager/maintenance_companies_cubit.dart';
+import '../../manager/maintenance_companies_state.dart';
+import '../widgets/maintenance_companies_card.dart';
 
 class MaintenanceCompaniesView extends StatelessWidget {
   const MaintenanceCompaniesView({super.key});

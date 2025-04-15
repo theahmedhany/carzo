@@ -1,6 +1,6 @@
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../theming/app_colors.dart';
 
 class MainLoadingIndicator extends StatelessWidget {
   const MainLoadingIndicator({super.key});

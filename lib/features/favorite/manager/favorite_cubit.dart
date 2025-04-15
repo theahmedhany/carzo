@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:carzo/core/helpers/shared_pref_helper.dart';
-import 'package:carzo/features/favorite/data/models/favorite_car_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../core/helpers/shared_pref_helper.dart';
+import '../data/models/favorite_car_model.dart';
 
 class FavoriteCubit extends Cubit<List<FavoriteCarModel>> {
   FavoriteCubit() : super([]);

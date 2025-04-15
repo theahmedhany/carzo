@@ -1,12 +1,13 @@
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
-import 'package:carzo/core/widgets/custom_master_app_bar.dart';
-import 'package:carzo/core/widgets/show_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../helpers/spacing.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_fonts.dart';
+import 'custom_master_app_bar.dart';
+import 'show_snack_bar.dart';
 
 class PrivacyPolicyView extends StatelessWidget {
   const PrivacyPolicyView({super.key});

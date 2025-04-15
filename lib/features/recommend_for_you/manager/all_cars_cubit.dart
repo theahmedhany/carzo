@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:carzo/core/networking/api_error_model.dart';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/features/recommend_for_you/data/models/all_cars_model.dart';
-import 'package:carzo/features/recommend_for_you/data/repos/all_cars_repo.dart';
-import 'package:carzo/features/recommend_for_you/manager/all_cars_state.dart';
+
+import '../../../core/networking/api_error_model.dart';
+import '../../../core/networking/api_network_exceptions.dart';
+import '../data/models/all_cars_model.dart';
+import '../data/repos/all_cars_repo.dart';
+import 'all_cars_state.dart';
 
 class AllCarsCubit extends Cubit<AllCarsState<List<AllCarsModel>>> {
   final AllCarsRepo allCarsRepo;

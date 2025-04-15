@@ -1,13 +1,13 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/widgets/custom_alert_dialog.dart';
-import 'package:carzo/core/widgets/main_loading_indicator.dart';
-import 'package:carzo/features/login_and_signup/manager/login/login_cubit.dart';
-import 'package:carzo/features/login_and_signup/manager/login/login_state.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_alert_dialog.dart';
+import '../../../../core/widgets/main_loading_indicator.dart';
+import '../../manager/login/login_cubit.dart';
+import '../../manager/login/login_state.dart';
 
 class LoginBlocListener extends StatelessWidget {
   const LoginBlocListener({super.key});

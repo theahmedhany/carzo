@@ -1,10 +1,10 @@
-import 'package:carzo/features/new_cars/manager/new_cars_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
+import '../../manager/new_cars_cubit.dart';
 
 class CustomNewCarsBrandList extends StatefulWidget {
   const CustomNewCarsBrandList({super.key});

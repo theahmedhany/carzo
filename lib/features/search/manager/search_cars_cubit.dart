@@ -1,8 +1,8 @@
-import 'package:carzo/core/networking/api_error_model.dart';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/features/search/data/models/search_cars_model.dart';
-import 'package:carzo/features/search/data/repos/search_cars_repo.dart';
-import 'package:carzo/features/search/manager/search_cars_state.dart';
+import '../../../core/networking/api_error_model.dart';
+import '../../../core/networking/api_network_exceptions.dart';
+import '../data/models/search_cars_model.dart';
+import '../data/repos/search_cars_repo.dart';
+import 'search_cars_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchCarsCubit extends Cubit<SearchCarsState<List<SearchCarsModel>>> {

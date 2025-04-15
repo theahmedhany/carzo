@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carzo/core/widgets/custom_progress_indicator.dart';
-import 'package:carzo/features/car_details/data/models/car_details_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
+import '../../data/models/car_details_model.dart';
 import 'custom_car_details_image_dots.dart';
 
 class CustomCarDetailsCarImages extends StatefulWidget {

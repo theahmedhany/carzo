@@ -1,8 +1,8 @@
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/core/networking/api_result.dart';
-import 'package:carzo/core/networking/api_services.dart';
-import 'package:carzo/features/login_and_signup/data/models/login/login_request_body.dart';
-import 'package:carzo/features/login_and_signup/data/models/login/login_response.dart';
+import '../../../../core/networking/api_network_exceptions.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/networking/api_services.dart';
+import '../models/login/login_request_body.dart';
+import '../models/login/login_response.dart';
 
 class LoginRepo {
   final ApiServices _apiServices;

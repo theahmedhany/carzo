@@ -1,10 +1,10 @@
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/widgets/custom_alert_dialog.dart';
-import 'package:carzo/core/widgets/main_loading_indicator.dart';
-import 'package:carzo/features/sell_car/manager/sell_used_car/sell_used_car_cubit.dart';
-import 'package:carzo/features/sell_car/manager/sell_used_car/sell_used_car_state.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/custom_sell_car_alert_dialog.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_alert_dialog.dart';
+import '../../../../core/widgets/main_loading_indicator.dart';
+import '../../manager/sell_used_car/sell_used_car_cubit.dart';
+import '../../manager/sell_used_car/sell_used_car_state.dart';
+import 'custom_sell_car_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,9 +1,9 @@
-import 'package:carzo/core/helpers/app_regex.dart';
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/features/sell_car/manager/sell_used_car/sell_used_car_cubit.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/custom_sell_note_alert.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/custom_used_car_add_image_section.dart';
-import 'package:carzo/features/sell_car/presentation/widgets/sell_used_car_bloc_listener.dart';
+import '../../../../core/helpers/app_regex.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../manager/sell_used_car/sell_used_car_cubit.dart';
+import '../widgets/custom_sell_note_alert.dart';
+import '../widgets/custom_used_car_add_image_section.dart';
+import '../widgets/sell_used_car_bloc_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
