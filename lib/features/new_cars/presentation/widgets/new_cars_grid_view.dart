@@ -1,3 +1,5 @@
+import 'package:carzo/core/helpers/spacing.dart';
+import 'package:carzo/core/widgets/no_cars_available.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +26,11 @@ class NewCarsGridView extends StatelessWidget {
           loading: () => const Center(child: CustomGridViewLoading()),
           success: (newCars) {
             if (newCars.isEmpty) {
-              return const Center(child: Text('No cars available'));
+              return Center(
+                child: Column(
+                  children: [verticalSpace(120), NoCarsAvailable()],
+                ),
+              );
             }
             return GridView.builder(
               shrinkWrap: true,
