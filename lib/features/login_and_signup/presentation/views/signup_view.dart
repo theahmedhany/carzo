@@ -143,9 +143,14 @@ class _SignupViewState extends State<SignupView> {
                       CustomMasterTextField(
                         title: 'USERNAME',
                         hint: 'Enter your username.',
+
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please Enter a valid username.';
+                          final trimmedValue = value?.trim() ?? '';
+                          if (trimmedValue.isEmpty) {
+                            return 'Please enter a valid username.';
+                          }
+                          if (trimmedValue.contains(' ')) {
+                            return 'Username should not contain spaces.';
                           }
                           return null;
                         },
