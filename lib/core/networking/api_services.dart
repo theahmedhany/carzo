@@ -26,9 +26,11 @@ part 'api_services.g.dart';
 abstract class ApiServices {
   factory ApiServices(Dio dio, {String? baseUrl}) = _ApiServices;
 
+  // Used Cars API
   @GET(ApiConstants.apiUsedCars)
   Future<List<UsedCarModel>> getAllUsedCars();
 
+  // New Cars API
   @GET('${ApiConstants.apiNewCars}/{brandName}')
   Future<List<NewCarModel>> getAllNewCars(@Path('brandName') String brandName);
 
