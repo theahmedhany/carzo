@@ -58,14 +58,6 @@ class PersonalDetailsView extends StatelessWidget {
                                     bottom: 8.r,
                                     right: 8.r,
                                   ),
-                                  // child: Image(
-                                  //   image: const AssetImage(
-                                  //     'assets/images/user.png',
-                                  //   ),
-                                  //   height: 65.h,
-                                  //   width: 65.w,
-                                  //   fit: BoxFit.contain,
-                                  // ),
                                   child: CircleAvatar(
                                     radius: 32.r,
                                     backgroundColor: AppColors.kMainAppColor,
