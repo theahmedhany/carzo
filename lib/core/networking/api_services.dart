@@ -72,27 +72,33 @@ abstract class ApiServices {
     @Path('showroomId') String showroomId,
   );
 
+  // Car Details API
   @GET('${ApiConstants.apiCarsDetails}/{carStatus}/{carId}')
   Future<CarDetailsModel> getCarDetails(
     @Path('carStatus') String carStatus,
     @Path('carId') String carId,
   );
 
+  // Sell New Car API
   @POST(ApiConstants.apiSellNewCar)
   @MultiPart()
   Future<SellNewCarResponse> sellNewCar(@Body() FormData formData);
 
+  // Sell Used Car API
   @POST(ApiConstants.apiSellUsedCar)
   @MultiPart()
   Future<SellUsedCarResponse> sellUsedCar(@Body() FormData formData);
 
+  // Sell Personal Car API
   @POST(ApiConstants.apiSellPersonalCar)
   @MultiPart()
   Future<SellPersonalCarResponse> sellPersonalCar(@Body() FormData formData);
 
+  // Login API
   @POST(ApiConstants.apiLogin)
   Future<LoginResponse> login(@Body() LoginRequestBody loginRequestBody);
 
+  // Signup API
   @POST(ApiConstants.apiSignup)
   Future<SignupResponse> signup(@Body() SignupRequestBody signupRequestBody);
 }
