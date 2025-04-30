@@ -23,7 +23,10 @@ class UsedCarsView extends StatelessWidget {
       backgroundColor: AppColors.kMainBackgroundColor,
       body: Column(
         children: [
-          const SafeArea(child: CustomMasterAppBar(title: 'Used Cars')),
+          const SafeArea(
+            bottom: false,
+            child: CustomMasterAppBar(title: 'Used Cars'),
+          ),
           Expanded(
             child: BlocBuilder<
               UsedCarsCubit,
@@ -59,7 +62,7 @@ class UsedCarsView extends StatelessWidget {
                     );
                   },
                   error: (errorMsg) {
-                    return ErrorPage(error: 'Error: $errorMsg', space: 120);
+                    return ErrorPage(error: 'Error: $errorMsg');
                   },
                 );
               },

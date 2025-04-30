@@ -26,6 +26,7 @@ class _SellPersonalCarViewState extends State<SellPersonalCarView> {
     return Scaffold(
       backgroundColor: AppColors.kMainBackgroundColor,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             const CustomMasterAppBar(title: 'Sell Personal Car'),

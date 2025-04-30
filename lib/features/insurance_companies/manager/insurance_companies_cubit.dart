@@ -19,9 +19,11 @@ class InsuranceCompaniesCubit
       success: (List<InsuranceCompaniesModel> insuranceCompaniesList) {
         emit(InsuranceCompaniesState.success(insuranceCompaniesList));
       },
-      failure: (ApiErrorModel apiErrorModel) {
+      failure: (ApiErrorModel apiError) {
         emit(
-          InsuranceCompaniesState.error(apiErrorModel as ApiNetworkExceptions),
+          InsuranceCompaniesState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
         );
       },
     );

@@ -20,9 +20,11 @@ class MaintenanceCompaniesCubit
       success: (List<MaintenanceCompaniesModel> maintenanceCompaniesList) {
         emit(MaintenanceCompaniesState.success(maintenanceCompaniesList));
       },
-      failure: (ApiErrorModel errorModel) {
+      failure: (ApiErrorModel apiError) {
         emit(
-          MaintenanceCompaniesState.error(errorModel as ApiNetworkExceptions),
+          MaintenanceCompaniesState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
         );
       },
     );

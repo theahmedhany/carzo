@@ -20,7 +20,9 @@ class NewCarsCubit extends Cubit<NewCarsState<List<NewCarModel>>> {
         emit(NewCarsState.success(newCarsList));
       },
       failure: (ApiErrorModel apiError) {
-        emit(NewCarsState.error(apiError as ApiNetworkExceptions));
+        emit(
+          NewCarsState.error(ApiNetworkExceptions.fromApiErrorModel(apiError)),
+        );
       },
     );
   }

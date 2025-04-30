@@ -22,6 +22,7 @@ class InsuranceCompaniesView extends StatelessWidget {
       body: Column(
         children: [
           const SafeArea(
+            bottom: false,
             child: CustomMasterAppBar(title: 'Insurance Companies'),
           ),
           Expanded(
@@ -55,7 +56,7 @@ class InsuranceCompaniesView extends StatelessWidget {
                     );
                   },
                   error: (errorMsg) {
-                    return ErrorPage(error: 'Error: $errorMsg', space: 120);
+                    return ErrorPage(error: 'Error: $errorMsg');
                   },
                 );
               },

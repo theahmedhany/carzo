@@ -29,6 +29,7 @@ class _FavoriteViewState extends State<FavoriteView> {
     return Scaffold(
       backgroundColor: AppColors.kMainBackgroundColor,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             const CustomHomeAppBar(),

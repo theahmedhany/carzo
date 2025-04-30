@@ -2,6 +2,18 @@ import 'api_error_handler.dart.dart';
 import 'api_error_model.dart';
 
 class ApiNetworkExceptions {
+  final ApiErrorModel? errorModel;
+  final String? message;
+
+  ApiNetworkExceptions({this.errorModel, this.message});
+
+  factory ApiNetworkExceptions.fromApiErrorModel(ApiErrorModel errorModel) {
+    return ApiNetworkExceptions(
+      errorModel: errorModel,
+      message: getErrorMessage(errorModel),
+    );
+  }
+
   static ApiErrorModel getDioException(dynamic error) {
     if (error is ApiErrorModel) {
       return error;

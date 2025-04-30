@@ -26,6 +26,7 @@ class CarShowroomsDetailsView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.kMainBackgroundColor,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             const CustomMasterAppBar(title: 'Showroom Details'),

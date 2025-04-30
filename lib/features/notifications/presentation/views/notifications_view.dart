@@ -15,7 +15,10 @@ class NotificationsView extends StatelessWidget {
       backgroundColor: AppColors.kMainBackgroundColor,
       body: Column(
         children: [
-          const SafeArea(child: CustomMasterAppBar(title: 'Notification')),
+          const SafeArea(
+            bottom: false,
+            child: CustomMasterAppBar(title: 'Notification'),
+          ),
           Expanded(
             child: Center(
               child: Column(

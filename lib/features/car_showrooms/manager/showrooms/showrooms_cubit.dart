@@ -19,7 +19,11 @@ class ShowroomsCubit extends Cubit<ShowroomsState<List<ShowroomsModel>>> {
         emit(ShowroomsState.success(carShowroomsList));
       },
       failure: (ApiErrorModel apiError) {
-        emit(ShowroomsState.error(apiError as ApiNetworkExceptions));
+        emit(
+          ShowroomsState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
+        );
       },
     );
   }

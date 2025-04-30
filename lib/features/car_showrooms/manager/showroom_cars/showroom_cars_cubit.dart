@@ -19,7 +19,11 @@ class ShowroomCarsCubit
         emit(ShowroomCarsState.success(showroomCarsList));
       },
       failure: (ApiErrorModel apiError) {
-        emit(ShowroomCarsState.error(apiError as ApiNetworkExceptions));
+        emit(
+          ShowroomCarsState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
+        );
       },
     );
   }

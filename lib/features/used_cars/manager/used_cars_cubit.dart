@@ -18,8 +18,10 @@ class UsedCarsCubit extends Cubit<UsedCarsState<List<UsedCarModel>>> {
       success: (List<UsedCarModel> usedCarsList) {
         emit(UsedCarsState.success(usedCarsList));
       },
-      failure: (ApiErrorModel errorModel) {
-        emit(UsedCarsState.error(errorModel as ApiNetworkExceptions));
+      failure: (ApiErrorModel apiError) {
+        emit(
+          UsedCarsState.error(ApiNetworkExceptions.fromApiErrorModel(apiError)),
+        );
       },
     );
   }

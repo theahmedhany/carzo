@@ -41,7 +41,10 @@ class OurServicesView extends StatelessWidget {
       backgroundColor: AppColors.kMainBackgroundColor,
       body: Column(
         children: [
-          const SafeArea(child: CustomMasterAppBar(title: 'Our Services')),
+          const SafeArea(
+            bottom: false,
+            child: CustomMasterAppBar(title: 'Our Services'),
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: OurServices.length,

@@ -16,6 +16,7 @@ class MasterChatView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.kMainBackgroundColor,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             CustomHomeAppBar(),

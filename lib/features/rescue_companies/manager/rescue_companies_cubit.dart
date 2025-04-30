@@ -20,7 +20,11 @@ class RescueCompaniesCubit
         emit(RescueCompaniesState.success(rescueCompaniesList));
       },
       failure: (ApiErrorModel apiError) {
-        emit(RescueCompaniesState.error(apiError as ApiNetworkExceptions));
+        emit(
+          RescueCompaniesState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
+        );
       },
     );
   }

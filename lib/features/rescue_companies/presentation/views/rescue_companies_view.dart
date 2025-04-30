@@ -21,7 +21,10 @@ class RescueCompaniesView extends StatelessWidget {
       backgroundColor: AppColors.kMainBackgroundColor,
       body: Column(
         children: [
-          const SafeArea(child: CustomMasterAppBar(title: 'Rescue Companies')),
+          const SafeArea(
+            bottom: false,
+            child: CustomMasterAppBar(title: 'Rescue Companies'),
+          ),
           Expanded(
             child: BlocBuilder<
               RescueCompaniesCubit,
@@ -52,7 +55,7 @@ class RescueCompaniesView extends StatelessWidget {
                     );
                   },
                   error: (errorMsg) {
-                    return ErrorPage(error: 'Error: $errorMsg', space: 120);
+                    return ErrorPage(error: 'Error: $errorMsg');
                   },
                 );
               },

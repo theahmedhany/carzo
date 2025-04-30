@@ -64,6 +64,7 @@ class _GetStartedViewState extends State<GetStartedView> {
                 currentIndex: currentIndex,
               ),
               SafeArea(
+                bottom: false,
                 child: Center(
                   child: Column(
                     children: [

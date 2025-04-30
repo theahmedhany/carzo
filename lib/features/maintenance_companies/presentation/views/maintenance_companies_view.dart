@@ -22,6 +22,7 @@ class MaintenanceCompaniesView extends StatelessWidget {
       body: Column(
         children: [
           const SafeArea(
+            bottom: false,
             child: CustomMasterAppBar(title: 'Maintenance Companies'),
           ),
           Expanded(
@@ -55,7 +56,7 @@ class MaintenanceCompaniesView extends StatelessWidget {
                     );
                   },
                   error: (errorMsg) {
-                    return ErrorPage(error: 'Error: $errorMsg', space: 120);
+                    return ErrorPage(error: 'Error: $errorMsg');
                   },
                 );
               },

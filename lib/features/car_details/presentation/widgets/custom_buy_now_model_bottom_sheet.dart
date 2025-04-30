@@ -1,3 +1,4 @@
+import 'package:carzo/core/theming/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -30,8 +31,16 @@ class CustomBuyNowModelBottomSheet extends StatelessWidget {
                 Text('Seller Information', style: AppFonts.font24WhiteBold),
                 verticalSpace(22),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    CircleAvatar(
+                      radius: 26.r,
+                      backgroundColor: AppColors.kMainBackgroundColor,
+                      child: Text(
+                        details.dealershipName!.substring(0, 2).toUpperCase(),
+                        style: AppFonts.font18DarkBold,
+                      ),
+                    ),
+                    horizontalSpace(24),
                     Text(
                       details.dealershipName ?? 'Unknown',
                       style: AppFonts.font18WhiteBold,

@@ -67,7 +67,7 @@ class NewCarsGridView extends StatelessWidget {
               },
             );
           },
-          error: (errorMsg) => ErrorPage(error: 'Error: $errorMsg', space: 120),
+          error: (errorMsg) => ErrorPage(error: 'Error: $errorMsg'),
         );
       },
     );

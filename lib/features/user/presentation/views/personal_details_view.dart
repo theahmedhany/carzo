@@ -31,6 +31,7 @@ class PersonalDetailsView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.kMainBackgroundColor,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             const CustomMasterAppBar(title: 'User Profile'),
@@ -57,13 +58,21 @@ class PersonalDetailsView extends StatelessWidget {
                                     bottom: 8.r,
                                     right: 8.r,
                                   ),
-                                  child: Image(
-                                    image: const AssetImage(
-                                      'assets/images/user.png',
+                                  // child: Image(
+                                  //   image: const AssetImage(
+                                  //     'assets/images/user.png',
+                                  //   ),
+                                  //   height: 65.h,
+                                  //   width: 65.w,
+                                  //   fit: BoxFit.contain,
+                                  // ),
+                                  child: CircleAvatar(
+                                    radius: 32.r,
+                                    backgroundColor: AppColors.kMainAppColor,
+                                    child: Text(
+                                      name.substring(0, 2).toUpperCase(),
+                                      style: AppFonts.font24WhiteBold,
                                     ),
-                                    height: 65.h,
-                                    width: 65.w,
-                                    fit: BoxFit.contain,
                                   ),
                                 ),
                                 Column(

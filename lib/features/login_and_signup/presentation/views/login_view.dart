@@ -27,6 +27,7 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       backgroundColor: AppColors.kMainBackgroundColor,
       body: SafeArea(
+        bottom: false,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 18.r),
           child: SingleChildScrollView(

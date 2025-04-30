@@ -19,7 +19,9 @@ class AllCarsCubit extends Cubit<AllCarsState<List<AllCarsModel>>> {
         emit(AllCarsState.success(allCarsList));
       },
       failure: (ApiErrorModel apiError) {
-        emit(AllCarsState.error(apiError as ApiNetworkExceptions));
+        emit(
+          AllCarsState.error(ApiNetworkExceptions.fromApiErrorModel(apiError)),
+        );
       },
     );
   }

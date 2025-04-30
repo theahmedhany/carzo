@@ -80,6 +80,7 @@ class _SearchViewState extends State<SearchView> {
     return Scaffold(
       backgroundColor: AppColors.kMainBackgroundColor,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             const CustomHomeAppBar(),

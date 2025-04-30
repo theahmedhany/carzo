@@ -19,7 +19,11 @@ class BrandCarsCubit extends Cubit<BrandCarsState<List<BrandCarsModel>>> {
         emit(BrandCarsState.success(brandCarsRepo));
       },
       failure: (ApiErrorModel apiError) {
-        emit(BrandCarsState.error(apiError as ApiNetworkExceptions));
+        emit(
+          BrandCarsState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
+        );
       },
     );
   }

@@ -71,7 +71,7 @@ class CarShowroomsGridView extends StatelessWidget {
               },
             );
           },
-          error: (errorMsg) => ErrorPage(error: 'Error: $errorMsg', space: 50),
+          error: (errorMsg) => ErrorPage(error: 'Error: $errorMsg'),
         );
       },
     );

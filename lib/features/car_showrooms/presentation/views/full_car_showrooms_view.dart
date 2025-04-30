@@ -21,7 +21,10 @@ class FullCarShowroomsView extends StatelessWidget {
       backgroundColor: AppColors.kMainBackgroundColor,
       body: Column(
         children: [
-          const SafeArea(child: CustomMasterAppBar(title: 'Car Showrooms')),
+          const SafeArea(
+            bottom: false,
+            child: CustomMasterAppBar(title: 'Car Showrooms'),
+          ),
           Expanded(
             child: BlocBuilder<
               ShowroomsCubit,
@@ -51,7 +54,7 @@ class FullCarShowroomsView extends StatelessWidget {
                     );
                   },
                   error: (errorMsg) {
-                    return ErrorPage(error: 'Error: $errorMsg', space: 120);
+                    return ErrorPage(error: 'Error: $errorMsg');
                   },
                 );
               },

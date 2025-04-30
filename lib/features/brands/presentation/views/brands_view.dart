@@ -50,7 +50,10 @@ class BrandsView extends StatelessWidget {
       backgroundColor: AppColors.kMainBackgroundColor,
       body: Column(
         children: [
-          const SafeArea(child: CustomMasterAppBar(title: 'Brands')),
+          const SafeArea(
+            bottom: false,
+            child: CustomMasterAppBar(title: 'Brands'),
+          ),
           Expanded(
             child: GridView.builder(
               physics: const BouncingScrollPhysics(),

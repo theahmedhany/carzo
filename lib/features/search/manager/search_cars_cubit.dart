@@ -22,8 +22,12 @@ class SearchCarsCubit extends Cubit<SearchCarsState<List<SearchCarsModel>>> {
         allCars = carsList;
         emit(SearchCarsState.success(carsList));
       },
-      failure: (ApiErrorModel errorModel) {
-        emit(SearchCarsState.error(errorModel as ApiNetworkExceptions));
+      failure: (ApiErrorModel apiError) {
+        emit(
+          SearchCarsState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
+        );
       },
     );
   }
@@ -38,8 +42,12 @@ class SearchCarsCubit extends Cubit<SearchCarsState<List<SearchCarsModel>>> {
         allCars = filteredCarsList;
         emit(SearchCarsState.success(filteredCarsList));
       },
-      failure: (ApiErrorModel errorModel) {
-        emit(SearchCarsState.error(errorModel as ApiNetworkExceptions));
+      failure: (ApiErrorModel apiError) {
+        emit(
+          SearchCarsState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
+        );
       },
     );
   }

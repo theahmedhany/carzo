@@ -16,7 +16,10 @@ class NewCarsView extends StatelessWidget {
       backgroundColor: AppColors.kMainBackgroundColor,
       body: Column(
         children: [
-          const SafeArea(child: CustomMasterAppBar(title: 'New Cars')),
+          const SafeArea(
+            bottom: false,
+            child: CustomMasterAppBar(title: 'New Cars'),
+          ),
           Expanded(
             child: CustomScrollView(
               physics: const BouncingScrollPhysics(),

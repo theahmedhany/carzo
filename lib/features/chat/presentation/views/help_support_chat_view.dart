@@ -19,6 +19,7 @@ class HelpSupportChatView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.kMainBackgroundColor,
         body: SafeArea(
+          bottom: false,
           child: Column(
             children: [
               const CustomMasterAppBar(title: 'Help Support Chat'),

@@ -18,7 +18,11 @@ class CarDetailsCubit extends Cubit<CarDetailsState<CarDetailsModel>> {
         emit(CarDetailsState.success(carDetails));
       },
       failure: (ApiErrorModel apiError) {
-        emit(CarDetailsState.error(apiError as ApiNetworkExceptions));
+        emit(
+          CarDetailsState.error(
+            ApiNetworkExceptions.fromApiErrorModel(apiError),
+          ),
+        );
       },
     );
   }

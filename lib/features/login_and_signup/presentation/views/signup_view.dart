@@ -60,6 +60,7 @@ class _SignupViewState extends State<SignupView> {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.r),
         child: SafeArea(
+          bottom: false,
           child: SingleChildScrollView(
             child: Column(
               children: [

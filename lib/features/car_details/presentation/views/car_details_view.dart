@@ -26,6 +26,7 @@ class CarDetailsView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.kMainBackgroundColor,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             const CustomMasterAppBar(title: 'Car Details'),
@@ -51,9 +52,7 @@ class CarDetailsView extends StatelessWidget {
                             ),
                           ],
                         ),
-                    error:
-                        (errorMsg) =>
-                            ErrorPage(error: 'Error: $errorMsg', space: 120),
+                    error: (errorMsg) => ErrorPage(error: 'Error: $errorMsg'),
                   );
                 },
               ),

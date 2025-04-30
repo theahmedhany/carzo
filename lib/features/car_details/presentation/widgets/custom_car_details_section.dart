@@ -98,11 +98,19 @@ class CustomCarDetailsSection extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Image.asset(
-                        'assets/images/user.png',
-                        fit: BoxFit.fill,
-                        height: 50.h,
-                        width: 50.w,
+                      // Image.asset(
+                      //   'assets/images/user.png',
+                      //   fit: BoxFit.fill,
+                      //   height: 50.h,
+                      //   width: 50.w,
+                      // ),
+                      CircleAvatar(
+                        radius: 26.r,
+                        backgroundColor: AppColors.kMainAppColor,
+                        child: Text(
+                          details.dealershipName!.substring(0, 2).toUpperCase(),
+                          style: AppFonts.font18WhiteBold,
+                        ),
                       ),
                       SizedBox(width: 8.w),
                       Text(

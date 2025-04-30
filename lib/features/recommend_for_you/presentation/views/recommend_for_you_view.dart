@@ -23,7 +23,10 @@ class RecommendForYouView extends StatelessWidget {
       backgroundColor: AppColors.kMainBackgroundColor,
       body: Column(
         children: [
-          const SafeArea(child: CustomMasterAppBar(title: 'Recommend For You')),
+          const SafeArea(
+            bottom: false,
+            child: CustomMasterAppBar(title: 'Recommend For You'),
+          ),
           Expanded(
             child: BlocBuilder<AllCarsCubit, AllCarsState<List<AllCarsModel>>>(
               builder: (context, state) {
@@ -55,7 +58,7 @@ class RecommendForYouView extends StatelessWidget {
                     );
                   },
                   error: (errorMsg) {
-                    return ErrorPage(error: 'Error: $errorMsg', space: 120);
+                    return ErrorPage(error: 'Error: $errorMsg');
                   },
                 );
               },

@@ -57,7 +57,7 @@ class BrandsCarsGridView extends StatelessWidget {
             );
           },
           error: (errorMsg) {
-            return ErrorPage(error: 'Error: $errorMsg', space: 130);
+            return ErrorPage(error: 'Error: $errorMsg');
           },
         );
       },

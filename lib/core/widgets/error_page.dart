@@ -5,10 +5,9 @@ import '../helpers/spacing.dart';
 import '../theming/app_fonts.dart';
 
 class ErrorPage extends StatelessWidget {
-  const ErrorPage({super.key, required this.error, required this.space});
+  const ErrorPage({super.key, required this.error});
 
   final String error;
-  final double space;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +17,7 @@ class ErrorPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          verticalSpace(space),
-          Image.asset('assets/images/error_page.png'),
-          verticalSpace(32),
+          Center(child: Image.asset('assets/images/error_page.png')),
           Text('An Error Occurred.', style: AppFonts.font18DarkSemiBold),
           verticalSpace(16),
           Text(
