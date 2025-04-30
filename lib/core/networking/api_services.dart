@@ -34,31 +34,39 @@ abstract class ApiServices {
   @GET('${ApiConstants.apiNewCars}/{brandName}')
   Future<List<NewCarModel>> getAllNewCars(@Path('brandName') String brandName);
 
+  // All Cars API
   @GET(ApiConstants.apiAllCars)
   Future<List<AllCarsModel>> getAllCars();
 
+  // Brands API
   @GET('${ApiConstants.apiBrandCars}/{brandName}')
   Future<List<BrandCarsModel>> getCarsByBrand(
     @Path('brandName') String brandName,
   );
 
+  // Search Cars API
   @GET('${ApiConstants.apiSearchCars}/{brandName}')
   Future<List<SearchCarsModel>> getCarsBySearch(
     @Path('brandName') String brandName,
   );
 
+  // Insurance Companies API
   @GET(ApiConstants.apiInsuranceCompanies)
   Future<List<InsuranceCompaniesModel>> getAllInsuranceCompanies();
 
+  // Maintenance Companies API
   @GET(ApiConstants.apiMaintenanceCompanies)
   Future<List<MaintenanceCompaniesModel>> getAllMaintenanceCompanies();
 
+  // Rescue Companies API
   @GET(ApiConstants.apiRescueCompanies)
   Future<List<RescueCompaniesModel>> getAllRescueCompanies();
 
+  // Car Showrooms API
   @GET(ApiConstants.apiCarShowrooms)
   Future<List<ShowroomsModel>> getAllCarShowrooms();
 
+  // Car Showroom Cars API
   @GET('${ApiConstants.apiAllShowroomCars}={showroomId}')
   Future<List<ShowroomCarsModel>> getCarsByShowroom(
     @Path('showroomId') String showroomId,
