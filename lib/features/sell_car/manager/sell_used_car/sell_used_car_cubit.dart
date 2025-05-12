@@ -155,7 +155,7 @@ class SellUsedCarCubit extends Cubit<SellUsedCarState> {
         dealership: dealershipController.text.trim(),
         Phone: phoneController.text.trim(),
         Location: locationController.text.trim(),
-        Year: yearController.text.trim(),
+        ManufacturingYear: yearController.text.trim(),
         FuelType: fuelController.text.trim(),
         Transmission: transmissionController.text.trim(),
         Color: colorController.text.trim(),

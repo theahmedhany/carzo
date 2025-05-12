@@ -1,8 +1,13 @@
+import 'package:carzo/features/advertisements/data/repos/user_advertisements_repo.dart';
+import 'package:carzo/features/advertisements/manager/user_advertisements_cubit.dart';
+import 'package:carzo/features/advertisements/presentation/views/user_advertisements_view.dart';
+import 'package:carzo/features/brands/data/repos/all_brands_repo.dart';
+import 'package:carzo/features/brands/manager/All_brands/all_brands_cubit.dart';
+import 'package:carzo/features/brands/manager/brand_cars/brand_cars_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/brands/data/repos/brand_cars_repo.dart';
-import '../../features/brands/manager/brand_cars_cubit.dart';
 import '../../features/brands/presentation/views/brands_cars_view.dart';
 import '../../features/brands/presentation/views/brands_view.dart';
 import '../../features/car_details/data/repos/car_details_repo.dart';
@@ -232,8 +237,22 @@ class AppRouter {
       case Routes.sellNewCarsView:
         return MaterialPageRoute(
           builder:
-              (_) => BlocProvider(
-                create: (context) => getIt<SellNewCarCubit>(),
+              (_) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(create: (context) => getIt<SellNewCarCubit>()),
+                  BlocProvider(
+                    create:
+                        (context) =>
+                            AllBrandsCubit(getIt<AllBrandsRepo>())
+                              ..emitGetAllBrands(),
+                  ),
+                  BlocProvider(
+                    create:
+                        (context) =>
+                            ShowroomsCubit(getIt<ShowroomsRepo>())
+                              ..emitGetAllCarShowrooms(),
+                  ),
+                ],
                 child: SellNewCarsView(),
               ),
         );
@@ -242,8 +261,22 @@ class AppRouter {
       case Routes.sellUsedCarView:
         return MaterialPageRoute(
           builder:
-              (_) => BlocProvider(
-                create: (context) => getIt<SellUsedCarCubit>(),
+              (_) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(create: (context) => getIt<SellUsedCarCubit>()),
+                  BlocProvider(
+                    create:
+                        (context) =>
+                            AllBrandsCubit(getIt<AllBrandsRepo>())
+                              ..emitGetAllBrands(),
+                  ),
+                  BlocProvider(
+                    create:
+                        (context) =>
+                            ShowroomsCubit(getIt<ShowroomsRepo>())
+                              ..emitGetAllCarShowrooms(),
+                  ),
+                ],
                 child: SellUsedCarView(),
               ),
         );
@@ -252,8 +285,18 @@ class AppRouter {
       case Routes.sellPersonalCarView:
         return MaterialPageRoute(
           builder:
-              (_) => BlocProvider(
-                create: (context) => getIt<SellPersonalCarCubit>(),
+              (_) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(
+                    create: (context) => getIt<SellPersonalCarCubit>(),
+                  ),
+                  BlocProvider(
+                    create:
+                        (context) =>
+                            AllBrandsCubit(getIt<AllBrandsRepo>())
+                              ..emitGetAllBrands(),
+                  ),
+                ],
                 child: SellPersonalCarView(),
               ),
         );
@@ -361,6 +404,19 @@ class AppRouter {
       // Privacy Policy View
       case Routes.privacyPolicyView:
         return MaterialPageRoute(builder: (_) => const PrivacyPolicyView());
+
+      // User Advertisements View
+      case Routes.userAdvertisementsView:
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create:
+                    (context) =>
+                        UserAdvertisementsCubit(getIt<UserAdvertisementsRepo>())
+                          ..emitGetUserAdvertisements(),
+                child: UserAdvertisementsView(),
+              ),
+        );
 
       default:
         return null;

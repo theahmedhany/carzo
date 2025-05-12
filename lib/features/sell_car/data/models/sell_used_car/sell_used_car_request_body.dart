@@ -12,7 +12,7 @@ class SellUsedCarRequestBody {
   final String FuelType;
   final String Transmission;
   final String Color;
-  final String Year;
+  final String ManufacturingYear;
   final String Mileage;
   final String Description;
   final String dealership;
@@ -33,7 +33,7 @@ class SellUsedCarRequestBody {
     required this.dealership,
     required this.Phone,
     required this.Location,
-    required this.Year,
+    required this.ManufacturingYear,
     required this.Transmission,
     required this.Color,
   });

@@ -1,8 +1,12 @@
+import 'package:carzo/features/advertisements/data/repos/user_advertisements_repo.dart';
+import 'package:carzo/features/advertisements/manager/user_advertisements_cubit.dart';
+import 'package:carzo/features/brands/data/repos/all_brands_repo.dart';
+import 'package:carzo/features/brands/manager/All_brands/all_brands_cubit.dart';
+import 'package:carzo/features/brands/manager/brand_cars/brand_cars_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/brands/data/repos/brand_cars_repo.dart';
-import '../../features/brands/manager/brand_cars_cubit.dart';
 import '../../features/car_details/data/repos/car_details_repo.dart';
 import '../../features/car_details/manager/car_details_cubit.dart';
 import '../../features/car_showrooms/data/repos/showroom_cars_repo.dart';
@@ -40,7 +44,7 @@ final getIt = GetIt.instance;
 
 Future<void> initGetIt() async {
   // Dio & ApiService
-  Dio dio = DioFactory.getDio();
+  Dio dio = await DioFactory.getDio();
   getIt.registerLazySingleton<ApiServices>(() => ApiServices(dio));
 
   // Used Cars
@@ -69,6 +73,14 @@ Future<void> initGetIt() async {
   );
   getIt.registerFactory<BrandCarsCubit>(
     () => BrandCarsCubit(getIt<BrandCarsRepo>()),
+  );
+
+  // All Brands
+  getIt.registerLazySingleton<AllBrandsRepo>(
+    () => AllBrandsRepo(getIt<ApiServices>()),
+  );
+  getIt.registerFactory<AllBrandsCubit>(
+    () => AllBrandsCubit(getIt<AllBrandsRepo>()),
   );
 
   // Search Cars
@@ -125,6 +137,14 @@ Future<void> initGetIt() async {
   );
   getIt.registerFactory<CarDetailsCubit>(
     () => CarDetailsCubit(getIt<CarDetailsRepo>()),
+  );
+
+  // User Advertisements
+  getIt.registerLazySingleton<UserAdvertisementsRepo>(
+    () => UserAdvertisementsRepo(getIt<ApiServices>()),
+  );
+  getIt.registerFactory<UserAdvertisementsCubit>(
+    () => UserAdvertisementsCubit(getIt<UserAdvertisementsRepo>()),
   );
 
   // Sell New Car

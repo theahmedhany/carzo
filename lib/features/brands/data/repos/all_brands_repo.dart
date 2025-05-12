@@ -1,19 +1,17 @@
-import 'package:carzo/features/brands/data/models/brand_cars/brand_cars_model.dart';
+import 'package:carzo/features/brands/data/models/all_brands/all_brands_model.dart';
 
 import '../../../../core/networking/api_network_exceptions.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_services.dart';
 
-class BrandCarsRepo {
+class AllBrandsRepo {
   final ApiServices apiServices;
 
-  BrandCarsRepo(this.apiServices);
+  AllBrandsRepo(this.apiServices);
 
-  Future<ApiResult<List<BrandCarsModel>>> getCarsByBrand(
-    String selectedBrand,
-  ) async {
+  Future<ApiResult<List<AllBrandsModel>>> getAllBrands() async {
     try {
-      var response = await apiServices.getCarsByBrand(selectedBrand);
+      var response = await apiServices.getAllBrands();
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiNetworkExceptions.getDioException(error));

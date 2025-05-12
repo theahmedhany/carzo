@@ -21,7 +21,7 @@ SellUsedCarRequestBody _$SellUsedCarRequestBodyFromJson(
   dealership: json['dealership'] as String,
   Phone: json['Phone'] as String,
   Location: json['Location'] as String,
-  Year: json['Year'] as String,
+  ManufacturingYear: json['ManufacturingYear'] as String,
   Transmission: json['Transmission'] as String,
   Color: json['Color'] as String,
 );
@@ -37,7 +37,7 @@ Map<String, dynamic> _$SellUsedCarRequestBodyToJson(
   'FuelType': instance.FuelType,
   'Transmission': instance.Transmission,
   'Color': instance.Color,
-  'Year': instance.Year,
+  'ManufacturingYear': instance.ManufacturingYear,
   'Mileage': instance.Mileage,
   'Description': instance.Description,
   'dealership': instance.dealership,

@@ -142,6 +142,13 @@ class PersonalDetailsView extends StatelessWidget {
                             },
                           ),
                           CustomPersonalDetailsListTile(
+                            text: 'Selled Cars History',
+                            image: 'assets/icons/about_us.svg',
+                            press: () {
+                              context.pushNamed(Routes.userAdvertisementsView);
+                            },
+                          ),
+                          CustomPersonalDetailsListTile(
                             text: 'Sell Car',
                             image: 'assets/icons/sell-car.svg',
                             press: () {

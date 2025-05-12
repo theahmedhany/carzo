@@ -5,6 +5,7 @@ class ApiConstants {
   static const String apiUsedCars = "Car/AllCars/Used";
   static const String apiAllCars = "Car/GetAllCars";
   static const String apiBrandCars = "Car/GetAllCars";
+  static const String apiAllBrand = "Brand/Brands";
   static const String apiSearchCars = "Car/GetAllCars";
   static const String apiInsuranceCompanies = "Companies/GetAllInsurance";
   static const String apiMaintenanceCompanies = "Companies/maintenance";
@@ -12,6 +13,8 @@ class ApiConstants {
   static const String apiCarShowrooms = "Dealership/GetAllDealership";
   static const String apiAllShowroomCars = "Car/GetAllCars?dealershipId";
   static const String apiCarsDetails = "Car";
+  static const String apiUserAdvertisements = "Advertisement/my-advertisements";
+  static const String apiDeleteUserAdvertisement = "Advertisement";
 
   static const String apiSellNewCar = "Car/CreateNewCar";
   static const String apiSellUsedCar = "Car/CreateUsedCar";

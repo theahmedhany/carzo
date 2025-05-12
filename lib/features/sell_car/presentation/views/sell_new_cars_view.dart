@@ -1,6 +1,14 @@
+import 'package:carzo/features/brands/data/models/all_brands/all_brands_model.dart';
+import 'package:carzo/features/brands/manager/All_brands/all_brands_cubit.dart';
+import 'package:carzo/features/brands/manager/All_brands/all_brands_state.dart';
+import 'package:carzo/features/car_showrooms/data/models/showrooms/showrooms_model.dart';
+import 'package:carzo/features/car_showrooms/manager/showrooms/showrooms_cubit.dart';
+import 'package:carzo/features/car_showrooms/manager/showrooms/showrooms_state.dart';
+import 'package:carzo/features/sell_car/presentation/widgets/custom_loading_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/helpers/extensions.dart';
@@ -71,20 +79,7 @@ class _SellNewCarsViewState extends State<SellNewCarsView> {
                         verticalSpace(16),
                         const CustomNewCarAddImageSection(),
                         verticalSpace(16),
-                        CustomSellCarTextField(
-                          controller:
-                              context.read<SellNewCarCubit>().brandController,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a valid brand.';
-                            }
-                            return null;
-                          },
-                          keyboardType: TextInputType.text,
-                          title: 'Brand',
-                          hint: 'Car brand',
-                          icon: 'assets/icons/car-brand.svg',
-                        ),
+                        SellNewCarBrandsList(),
                         verticalSpace(16),
                         CustomSellCarTextField(
                           controller:
@@ -423,22 +418,7 @@ class _SellNewCarsViewState extends State<SellNewCarsView> {
                           icon: 'assets/icons/car-color.svg',
                         ),
                         verticalSpace(16),
-                        CustomSellCarTextField(
-                          controller:
-                              context
-                                  .read<SellNewCarCubit>()
-                                  .dealershipController,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a valid value.';
-                            }
-                            return null;
-                          },
-                          keyboardType: TextInputType.text,
-                          title: 'Dealership',
-                          hint: 'Car dealership name',
-                          icon: 'assets/icons/user.svg',
-                        ),
+                        SellNewCarShowroomsList(),
                         verticalSpace(16),
                         CustomSellCarTextField(
                           controller:
@@ -468,7 +448,7 @@ class _SellNewCarsViewState extends State<SellNewCarsView> {
                             }
                             return null;
                           },
-                          keyboardType: TextInputType.text,
+                          keyboardType: TextInputType.number,
                           title: 'Phone Number',
                           hint: 'Owner\'s mobile phone number',
                           icon: 'assets/icons/call.svg',
@@ -498,5 +478,391 @@ class _SellNewCarsViewState extends State<SellNewCarsView> {
     if (context.read<SellNewCarCubit>().formKey.currentState!.validate()) {
       context.read<SellNewCarCubit>().submitCarListing(context);
     }
+  }
+}
+
+class SellNewCarBrandsList extends StatelessWidget {
+  const SellNewCarBrandsList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AllBrandsCubit, AllBrandsState<List<AllBrandsModel>>>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Brand',
+                style: TextStyle(
+                  color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  height: 0.5,
+                  letterSpacing: 1.89,
+                ),
+              ),
+            ),
+            verticalSpace(6),
+            state.when(
+              idle:
+                  () => CustomLoadingTextField(
+                    validator: (value) {},
+                    isEnabled: false,
+                    keyboardType: TextInputType.text,
+                    hint: 'Car brand',
+                    icon: 'assets/icons/car-brand.svg',
+                  ),
+              loading:
+                  () => CustomLoadingTextField(
+                    validator: (value) {},
+                    isEnabled: false,
+                    keyboardType: TextInputType.text,
+                    hint: 'Loading Brands...',
+                    icon: 'assets/icons/car-brand.svg',
+                  ),
+              error:
+                  (error) => CustomLoadingTextField(
+                    validator: (value) {},
+                    isEnabled: false,
+                    keyboardType: TextInputType.text,
+                    hint: 'Error loading brands...',
+                    icon: 'assets/icons/car-brand.svg',
+                  ),
+              success: (brands) {
+                return DropdownButtonFormField<String>(
+                  isExpanded: true,
+                  value:
+                      context
+                              .read<SellNewCarCubit>()
+                              .brandController
+                              .text
+                              .isEmpty
+                          ? null
+                          : context
+                              .read<SellNewCarCubit>()
+                              .brandController
+                              .text,
+                  items:
+                      brands.map((brand) {
+                        return DropdownMenuItem<String>(
+                          value: brand.name,
+                          child: ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            leading:
+                                brand.pictureUrl.isNotEmpty
+                                    ? CircleAvatar(
+                                      radius: 20.r,
+                                      backgroundColor: AppColors.kMainAppColor
+                                          .withValues(alpha: 0.2),
+                                      child: Container(
+                                        margin: EdgeInsets.all(4.r),
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                            image: NetworkImage(
+                                              brand.pictureUrl,
+                                            ),
+                                            fit: BoxFit.contain,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                    : null,
+                            title: Text(
+                              brand.name,
+                              style: TextStyle(
+                                color: AppColors.kMainAppColor.withValues(
+                                  alpha: 0.8,
+                                ),
+                                fontSize: 14.sp,
+                              ),
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                  selectedItemBuilder: (BuildContext context) {
+                    return brands.map((brand) {
+                      return Text(
+                        brand.name,
+                        style: TextStyle(
+                          color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                          fontSize: 14.sp,
+                        ),
+                      );
+                    }).toList();
+                  },
+                  onChanged: (value) {
+                    if (value != null) {
+                      context.read<SellNewCarCubit>().brandController.text =
+                          value;
+                    }
+                  },
+                  style: TextStyle(
+                    color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                    fontSize: 14.sp,
+                  ),
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 18.w,
+                      vertical: 16.h,
+                    ),
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.only(left: 18.r, right: 12.r),
+                      child: SvgPicture.asset(
+                        'assets/icons/car-brand.svg',
+                        colorFilter: ColorFilter.mode(
+                          AppColors.kMainAppColor,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ),
+                    prefixIconConstraints: const BoxConstraints(
+                      minWidth: 10,
+                      minHeight: 10,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white.withValues(alpha: 0.8),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(width: 1.5.w),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(
+                        width: 1.5,
+                        color: AppColors.kMainGreyColor,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(
+                        width: 1.5,
+                        color: AppColors.kMainGreyColor,
+                      ),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.red, width: 1),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.red,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    hintText: 'Select brand',
+                    hintStyle: TextStyle(
+                      color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                    ),
+                  ),
+                  dropdownColor: Colors.white.withValues(alpha: 0.9),
+                  borderRadius: BorderRadius.circular(14),
+                  icon: Icon(
+                    Icons.arrow_circle_down_rounded,
+                    color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                  ),
+                  iconSize: 26,
+                  elevation: 2,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a valid brand.';
+                    }
+                    return null;
+                  },
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class SellNewCarShowroomsList extends StatelessWidget {
+  const SellNewCarShowroomsList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ShowroomsCubit, ShowroomsState<List<ShowroomsModel>>>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Dealerships',
+                style: TextStyle(
+                  color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  height: 0.5,
+                  letterSpacing: 1.89,
+                ),
+              ),
+            ),
+            verticalSpace(6),
+            state.when(
+              idle:
+                  () => CustomLoadingTextField(
+                    validator: (value) {},
+                    isEnabled: false,
+                    keyboardType: TextInputType.text,
+                    hint: 'Loading showrooms...',
+                    icon: 'assets/icons/user.svg',
+                  ),
+              loading:
+                  () => CustomLoadingTextField(
+                    validator: (value) {},
+                    isEnabled: false,
+                    keyboardType: TextInputType.text,
+                    hint: 'Loading showrooms...',
+                    icon: 'assets/icons/user.svg',
+                  ),
+              error:
+                  (error) => CustomLoadingTextField(
+                    validator: (value) {},
+                    isEnabled: false,
+                    keyboardType: TextInputType.text,
+                    hint: 'Error loading showrooms...',
+                    icon: 'assets/icons/user.svg',
+                  ),
+              success: (showrooms) {
+                return DropdownButtonFormField<ShowroomsModel>(
+                  isExpanded: true,
+                  value:
+                      context
+                              .read<SellNewCarCubit>()
+                              .dealershipController
+                              .text
+                              .isEmpty
+                          ? null
+                          : showrooms.firstWhere(
+                            (showroom) =>
+                                showroom.name ==
+                                context
+                                    .read<SellNewCarCubit>()
+                                    .dealershipController
+                                    .text,
+                            orElse: () => ShowroomsModel(),
+                          ),
+                  items:
+                      showrooms.map((showroom) {
+                        return DropdownMenuItem<ShowroomsModel>(
+                          value: showroom,
+                          child: Text(
+                            showroom.name ?? 'Unnamed Showroom',
+                            style: TextStyle(
+                              color: AppColors.kMainAppColor.withValues(
+                                alpha: 0.8,
+                              ),
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                  selectedItemBuilder: (BuildContext context) {
+                    return showrooms.map((showroom) {
+                      return Text(
+                        showroom.name ?? 'Unnamed Showroom',
+                        style: TextStyle(
+                          color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                          fontSize: 14.sp,
+                        ),
+                      );
+                    }).toList();
+                  },
+                  onChanged: (value) {
+                    if (value != null) {
+                      context
+                          .read<SellNewCarCubit>()
+                          .dealershipController
+                          .text = value.name ?? 'Unnamed Showroom';
+                    }
+                  },
+                  style: TextStyle(
+                    color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                    fontSize: 14.sp,
+                  ),
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 18.w,
+                      vertical: 16.h,
+                    ),
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.only(left: 18.r, right: 12.r),
+                      child: SvgPicture.asset(
+                        'assets/icons/user.svg',
+                        colorFilter: ColorFilter.mode(
+                          AppColors.kMainAppColor,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ),
+                    prefixIconConstraints: const BoxConstraints(
+                      minWidth: 10,
+                      minHeight: 10,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white.withValues(alpha: 0.8),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(width: 1.5.w),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(
+                        width: 1.5,
+                        color: AppColors.kMainGreyColor,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(
+                        width: 1.5,
+                        color: AppColors.kMainGreyColor,
+                      ),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.red, width: 1),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.red,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    hintText: 'Car dealership name',
+                    hintStyle: TextStyle(
+                      color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                    ),
+                  ),
+                  dropdownColor: Colors.white.withValues(alpha: 0.9),
+                  borderRadius: BorderRadius.circular(14),
+                  icon: Icon(
+                    Icons.arrow_circle_down_rounded,
+                    color: AppColors.kMainAppColor.withValues(alpha: 0.8),
+                  ),
+                  iconSize: 26,
+                  elevation: 2,
+                  validator: (value) {
+                    if (value == null) {
+                      return 'Please select a showroom.';
+                    }
+                    return null;
+                  },
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 }

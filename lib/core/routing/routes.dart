@@ -33,4 +33,5 @@ class Routes {
   static const String fullCarShowroomsView = '/fullCarShowroomsView';
   static const String brandsCarsView = '/brandsCarsView';
   static const String privacyPolicyView = '/privacyPolicyView';
+  static const String userAdvertisementsView = '/userAdvertisementsView';
 }

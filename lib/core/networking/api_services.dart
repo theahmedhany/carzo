@@ -1,5 +1,8 @@
+import 'package:carzo/features/advertisements/data/models/user_advertisements_model.dart';
+import 'package:carzo/features/brands/data/models/all_brands/all_brands_model.dart';
+import 'package:carzo/features/brands/data/models/brand_cars/brand_cars_model.dart';
+
 import 'api_constants.dart';
-import '../../features/brands/data/models/brand_cars_model.dart';
 import '../../features/car_details/data/models/car_details_model.dart';
 import '../../features/car_showrooms/data/models/showroom_cars/showroom_cars_model.dart';
 import '../../features/car_showrooms/data/models/showrooms/showrooms_model.dart';
@@ -44,6 +47,10 @@ abstract class ApiServices {
     @Path('brandName') String brandName,
   );
 
+  // All Brands API
+  @GET(ApiConstants.apiAllBrand)
+  Future<List<AllBrandsModel>> getAllBrands();
+
   // Search Cars API
   @GET('${ApiConstants.apiSearchCars}/{brandName}')
   Future<List<SearchCarsModel>> getCarsBySearch(
@@ -78,6 +85,13 @@ abstract class ApiServices {
     @Path('carStatus') String carStatus,
     @Path('carId') String carId,
   );
+
+  // User Advertisements API
+  @GET(ApiConstants.apiUserAdvertisements)
+  Future<List<UserAdvertisementsModel>> getUserAdvertisements();
+
+  @DELETE('${ApiConstants.apiDeleteUserAdvertisement}/{id}')
+  Future<HttpResponse> deleteUserAdvertisement(@Path('id') String userId);
 
   // Sell New Car API
   @POST(ApiConstants.apiSellNewCar)

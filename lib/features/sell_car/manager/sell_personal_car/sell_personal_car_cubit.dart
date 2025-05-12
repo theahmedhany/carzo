@@ -31,6 +31,7 @@ class SellPersonalCarCubit extends Cubit<SellPersonalCarState> {
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
   final TextEditingController locationController = TextEditingController();
+  final TextEditingController cityController = TextEditingController();
   final TextEditingController contactInfoController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
@@ -167,14 +168,12 @@ class SellPersonalCarCubit extends Cubit<SellPersonalCarState> {
         Transmission: transmissionController.text.trim(),
         Color: colorController.text.trim(),
         Description: descriptionController.text.trim(),
-        YearOfManufacture: yearOfManufactureController.text.trim(),
+        ManufacturingYear: yearOfManufactureController.text.trim(),
         Kilometers: kilometersController.text.trim(),
-
         ContactInfo: contactInfoController.text.trim(),
+        City: cityController.text.trim(),
 
-        Address: 'Unknown', // addressController.text.trim()
         TypeOfPlan: 'Monthly', // typeOfPlanController.text.trim()
-        PriceOfPlan: '123456', // priceOfPlanController.text.trim()
 
         SellerEmail: userEmail,
         AppUserId: appUserId,
