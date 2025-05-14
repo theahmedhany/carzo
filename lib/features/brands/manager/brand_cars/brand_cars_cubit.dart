@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:carzo/core/networking/api_error_model.dart';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/features/brands/data/models/brand_cars/brand_cars_model.dart';
-import 'package:carzo/features/brands/data/repos/brand_cars_repo.dart';
 
+import '../../../../core/networking/api_error_model.dart';
+import '../../../../core/networking/api_network_exceptions.dart';
+import '../../data/models/brand_cars/brand_cars_model.dart';
+import '../../data/repos/brand_cars_repo.dart';
 import 'brand_cars_state.dart';
 
 class BrandCarsCubit extends Cubit<BrandCarsState<List<BrandCarsModel>>> {

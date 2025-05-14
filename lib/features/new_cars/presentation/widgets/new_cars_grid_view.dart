@@ -1,14 +1,14 @@
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/widgets/no_cars_available.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/helpers/extensions.dart';
+import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/widgets/custom_grid_view_loading.dart';
 import '../../../../core/widgets/error_page.dart';
+import '../../../../core/widgets/no_cars_available.dart';
 import '../../data/models/new_car_model.dart';
 import '../../manager/new_cars_cubit.dart';
 import '../../manager/new_cars_state.dart';
@@ -28,7 +28,7 @@ class NewCarsGridView extends StatelessWidget {
             if (newCars.isEmpty) {
               return Center(
                 child: Column(
-                  children: [verticalSpace(120), NoCarsAvailable()],
+                  children: [verticalSpace(120), const NoCarsAvailable()],
                 ),
               );
             }

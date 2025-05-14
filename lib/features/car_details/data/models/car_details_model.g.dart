@@ -28,7 +28,7 @@ CarDetailsModel _$CarDetailsModelFromJson(Map<String, dynamic> json) =>
               .toList(),
       phone: json['phone'] as String?,
       location: json['location'] as String?,
-    );
+    )..dealershipImg = json['dealershipImg'] as String?;
 
 Map<String, dynamic> _$CarDetailsModelToJson(CarDetailsModel instance) =>
     <String, dynamic>{
@@ -44,6 +44,7 @@ Map<String, dynamic> _$CarDetailsModelToJson(CarDetailsModel instance) =>
       'url': instance.url,
       'phone': instance.phone,
       'location': instance.location,
+      'dealershipImg': instance.dealershipImg,
     };
 
 Specifications _$SpecificationsFromJson(Map<String, dynamic> json) =>

@@ -1,9 +1,10 @@
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
+
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class CustomSellCarRecommendedError extends StatelessWidget {
   const CustomSellCarRecommendedError({super.key});
@@ -121,7 +122,7 @@ class CustomSellCarRecommendedError extends StatelessWidget {
                           'assets/icons/heart.svg',
                           width: 15,
                           height: 15,
-                          colorFilter: ColorFilter.mode(
+                          colorFilter: const ColorFilter.mode(
                             AppColors.kMainGreyColor,
                             BlendMode.srcIn,
                           ),

@@ -29,7 +29,7 @@ class CustomGridViewLoading extends StatelessWidget {
           decoration: ShapeDecoration(
             color: const Color(0xFFF0F0F0),
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 1, color: AppColors.kMainGreyColor),
+              side: const BorderSide(width: 1, color: AppColors.kMainGreyColor),
               borderRadius: BorderRadius.circular(15),
             ),
           ),
@@ -44,7 +44,7 @@ class CustomGridViewLoading extends StatelessWidget {
                       child: Container(
                         width: double.infinity,
                         height: 130.h,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: AppColors.kSecondaryGreyColor,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(15),
@@ -71,7 +71,7 @@ class CustomGridViewLoading extends StatelessWidget {
                             'assets/icons/heart.svg',
                             width: 15,
                             height: 15,
-                            colorFilter: ColorFilter.mode(
+                            colorFilter: const ColorFilter.mode(
                               AppColors.kMainGreyColor,
                               BlendMode.srcIn,
                             ),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,6 +9,7 @@ import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
 import '../../../../core/widgets/custom_company_details_alert.dart';
 import '../../../../core/widgets/custom_master_button.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
 import '../../../../core/widgets/show_snack_bar.dart';
 import '../../data/models/car_details_model.dart';
 import 'custom_buy_now_model_bottom_sheet.dart';
@@ -91,19 +93,50 @@ class CustomCarDetailsSection extends StatelessWidget {
                 ],
               ),
               verticalSpace(8),
-              Divider(thickness: 1, color: AppColors.kMainGreyColor),
+              const Divider(thickness: 1, color: AppColors.kMainGreyColor),
               verticalSpace(8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      CircleAvatar(
-                        radius: 26.r,
-                        backgroundColor: AppColors.kMainAppColor,
-                        child: Text(
-                          details.dealershipName!.substring(0, 2).toUpperCase(),
-                          style: AppFonts.font18WhiteBold,
+                      ClipOval(
+                        child: Container(
+                          width: 54.r,
+                          height: 54.r,
+                          decoration: BoxDecoration(
+                            color: AppColors.kMainAppColor.withValues(
+                              alpha: 0.3,
+                            ),
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: AppColors.kMainTextColor,
+                              width: 2.r,
+                            ),
+                          ),
+                          child: CachedNetworkImage(
+                            imageUrl: details.dealershipImg ?? '',
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                            height: double.infinity,
+                            placeholder: (context, url) {
+                              return const Center(
+                                child: CustomProgressIndicator(),
+                              );
+                            },
+                            errorWidget: (context, url, error) {
+                              return CircleAvatar(
+                                radius: 26.r,
+                                backgroundColor: AppColors.kMainTextColor,
+                                child: Text(
+                                  details.dealershipName!
+                                      .substring(0, 2)
+                                      .toUpperCase(),
+                                  style: AppFonts.font18WhiteBold,
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                       SizedBox(width: 8.w),
@@ -118,17 +151,21 @@ class CustomCarDetailsSection extends StatelessWidget {
                       CustomCarDetailsIconCircle(
                         image: 'assets/icons/call.svg',
                         press: () {
+                          final formattedPhone =
+                              details.phone!.startsWith('0')
+                                  ? '+2${details.phone}'
+                                  : '+20${details.phone}';
                           showDialog(
                             context: context,
                             builder: (_) {
                               return CustomCompanyDetailsAlert(
                                 dialogIcon: 'assets/icons/call.svg',
                                 dialogHeader: 'Phone Number',
-                                dialogBody: '+2${details.phone}',
+                                dialogBody: formattedPhone,
                                 press: () {
                                   launchCustomUrl(
                                     context,
-                                    'tel:${details.phone ?? ''}',
+                                    'tel:$formattedPhone',
                                   );
                                 },
                               );
@@ -140,20 +177,23 @@ class CustomCarDetailsSection extends StatelessWidget {
                       CustomCarDetailsIconCircle(
                         image: 'assets/icons/Message-square.svg',
                         press: () {
+                          final formattedPhone =
+                              details.phone!.startsWith('0')
+                                  ? '+2${details.phone}'
+                                  : '+20${details.phone}';
                           showDialog(
                             context: context,
                             builder: (_) {
                               return CustomCompanyDetailsAlert(
                                 dialogIcon: 'assets/icons/Whatsapp.svg',
                                 dialogHeader: 'WhatsApp',
-                                dialogBody: '+2${details.phone}',
+                                dialogBody: formattedPhone,
                                 press: () async {
-                                  final phone = details.phone ?? '';
                                   final message = Uri.encodeComponent(
                                     'Hello, I need assistance with...',
                                   );
                                   final url = Uri.parse(
-                                    'https://wa.me/+2$phone?text=$message',
+                                    'https://wa.me/$formattedPhone?text=$message',
                                   );
 
                                   if (await canLaunchUrl(url)) {
@@ -191,7 +231,9 @@ class CustomCarDetailsSection extends StatelessWidget {
                 press: () {
                   showModalBottomSheet(
                     isScrollControlled: true,
-                    backgroundColor: AppColors.kMainAppColor,
+                    backgroundColor: AppColors.kMainAppColor.withValues(
+                      alpha: 0.8,
+                    ),
                     context: context,
                     builder: (context) {
                       return CustomBuyNowModelBottomSheet(details: details);

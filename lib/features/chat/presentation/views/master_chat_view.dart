@@ -19,7 +19,7 @@ class MasterChatView extends StatelessWidget {
         bottom: false,
         child: Column(
           children: [
-            CustomHomeAppBar(),
+            const CustomHomeAppBar(),
             CustomMasterChatViewCard(
               title: 'Help Support Chat',
               image: 'assets/images/chat_bot.png',

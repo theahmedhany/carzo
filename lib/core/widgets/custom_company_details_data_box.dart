@@ -30,7 +30,7 @@ class CustomCompanyDetailsDataBox extends StatelessWidget {
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1.5, color: AppColors.kMainGreyColor),
+            side: const BorderSide(width: 1.5, color: AppColors.kMainGreyColor),
             borderRadius: BorderRadius.circular(10),
           ),
         ),
@@ -40,7 +40,7 @@ class CustomCompanyDetailsDataBox extends StatelessWidget {
               width: 26.w,
               height: 26.h,
               icon,
-              colorFilter: ColorFilter.mode(
+              colorFilter: const ColorFilter.mode(
                 AppColors.kMainTextColor,
                 BlendMode.srcIn,
               ),

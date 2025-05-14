@@ -24,7 +24,7 @@ class CustomPersonalDetailsListTile extends StatelessWidget {
       title: Text(text, style: AppFonts.font14DarkRegular),
       trailing: SvgPicture.asset(
         'assets/icons/arrow-right.svg',
-        colorFilter: ColorFilter.mode(
+        colorFilter: const ColorFilter.mode(
           AppColors.kSecondaryTextColor,
           BlendMode.srcIn,
         ),

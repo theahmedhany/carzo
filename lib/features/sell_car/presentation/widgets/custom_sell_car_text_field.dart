@@ -55,7 +55,7 @@ class CustomSellCarTextField extends StatelessWidget {
               padding: EdgeInsets.only(left: 18.r, right: 12.r),
               child: SvgPicture.asset(
                 icon,
-                colorFilter: ColorFilter.mode(
+                colorFilter: const ColorFilter.mode(
                   AppColors.kMainAppColor,
                   BlendMode.srcIn,
                 ),
@@ -77,14 +77,14 @@ class CustomSellCarTextField extends StatelessWidget {
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 width: 1.5,
                 color: AppColors.kMainGreyColor,
               ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 width: 1.5,
                 color: AppColors.kMainGreyColor,
               ),

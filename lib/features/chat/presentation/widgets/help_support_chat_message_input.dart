@@ -56,14 +56,14 @@ class HelpSupportChatMessageInput extends StatelessWidget {
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       width: 1.5,
                       color: AppColors.kMainGreyColor,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       width: 1.5,
                       color: AppColors.kMainGreyColor,
                     ),
@@ -85,7 +85,7 @@ class HelpSupportChatMessageInput extends StatelessWidget {
                       child: SizedBox(
                         width: 26.w,
                         height: 26.h,
-                        child: CupertinoActivityIndicator(
+                        child: const CupertinoActivityIndicator(
                           color: AppColors.kMainBackgroundColor,
                         ),
                       ),

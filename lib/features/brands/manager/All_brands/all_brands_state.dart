@@ -1,5 +1,6 @@
-import 'package:carzo/core/networking/api_network_exceptions.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../../core/networking/api_network_exceptions.dart';
 
 part 'all_brands_state.freezed.dart';
 

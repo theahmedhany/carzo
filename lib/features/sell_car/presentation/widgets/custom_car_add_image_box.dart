@@ -21,14 +21,14 @@ class CustomCarAddImageBox extends StatelessWidget {
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1.5, color: AppColors.kMainGreyColor),
+            side: const BorderSide(width: 1.5, color: AppColors.kMainGreyColor),
             borderRadius: BorderRadius.circular(14),
           ),
         ),
         child: Center(
           child: SvgPicture.asset(
             'assets/icons/add-photo.svg',
-            colorFilter: ColorFilter.mode(
+            colorFilter: const ColorFilter.mode(
               AppColors.kMainAppColor,
               BlendMode.srcIn,
             ),

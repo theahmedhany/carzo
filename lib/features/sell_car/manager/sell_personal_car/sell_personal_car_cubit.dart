@@ -213,7 +213,11 @@ class SellPersonalCarCubit extends Cubit<SellPersonalCarState> {
         },
       );
     } catch (e) {
-      emit(SellPersonalCarState.error(error: "An unexpected error occurred."));
+      emit(
+        const SellPersonalCarState.error(
+          error: "An unexpected error occurred.",
+        ),
+      );
     }
   }
 

@@ -68,7 +68,7 @@ class _CustomCarDetailsCarImagesState extends State<CustomCarDetailsCarImages> {
                       width: double.infinity,
                       height: double.infinity,
                       placeholder: (context, url) {
-                        return Center(child: CustomProgressIndicator());
+                        return const Center(child: CustomProgressIndicator());
                       },
                       errorWidget: (context, url, error) {
                         return Center(

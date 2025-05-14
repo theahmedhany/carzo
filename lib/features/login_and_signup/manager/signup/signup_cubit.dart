@@ -50,7 +50,7 @@ class SignupCubit extends Cubit<SignupState> {
       );
     } catch (e) {
       emit(
-        SignupState.error(
+        const SignupState.error(
           error: "An unexpected error occurred. Please try again.",
         ),
       );

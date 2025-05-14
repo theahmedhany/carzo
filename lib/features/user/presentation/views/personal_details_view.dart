@@ -88,7 +88,9 @@ class PersonalDetailsView extends StatelessWidget {
                                       context: context,
                                       builder:
                                           (context) => CustomAlertDialog(
-                                            dialogColor: Color(0xFFB9E5E8),
+                                            dialogColor: const Color(
+                                              0xFFB9E5E8,
+                                            ),
                                             dialogHeader: 'Warning',
                                             dialogBody:
                                                 'This feature is not available yet.',

@@ -33,7 +33,7 @@ class CustomMasterAppBar extends StatelessWidget {
             ],
           ),
         ),
-        Divider(thickness: 1, color: AppColors.kMainGreyColor),
+        const Divider(thickness: 1, color: AppColors.kMainGreyColor),
       ],
     );
   }

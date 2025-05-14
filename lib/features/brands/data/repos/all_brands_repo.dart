@@ -1,8 +1,7 @@
-import 'package:carzo/features/brands/data/models/all_brands/all_brands_model.dart';
-
 import '../../../../core/networking/api_network_exceptions.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_services.dart';
+import '../models/all_brands/all_brands_model.dart';
 
 class AllBrandsRepo {
   final ApiServices apiServices;

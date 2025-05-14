@@ -1,11 +1,13 @@
-import 'package:carzo/core/theming/app_colors.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/helpers/launch_custom_url.dart';
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
 import '../../../../core/widgets/show_snack_bar.dart';
 import '../../data/models/car_details_model.dart';
 import 'custom_contact_information_card.dart';
@@ -32,12 +34,41 @@ class CustomBuyNowModelBottomSheet extends StatelessWidget {
                 verticalSpace(22),
                 Row(
                   children: [
-                    CircleAvatar(
-                      radius: 26.r,
-                      backgroundColor: AppColors.kMainBackgroundColor,
-                      child: Text(
-                        details.dealershipName!.substring(0, 2).toUpperCase(),
-                        style: AppFonts.font18DarkBold,
+                    ClipOval(
+                      child: Container(
+                        width: 54.r,
+                        height: 54.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.kMainAppColor.withValues(alpha: 0.3),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.kMainTextColor,
+                            width: 2.r,
+                          ),
+                        ),
+                        child: CachedNetworkImage(
+                          imageUrl: details.dealershipImg ?? '',
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: double.infinity,
+                          placeholder: (context, url) {
+                            return const Center(
+                              child: CustomProgressIndicator(),
+                            );
+                          },
+                          errorWidget: (context, url, error) {
+                            return CircleAvatar(
+                              radius: 26.r,
+                              backgroundColor: AppColors.kMainTextColor,
+                              child: Text(
+                                details.dealershipName!
+                                    .substring(0, 2)
+                                    .toUpperCase(),
+                                style: AppFonts.font18WhiteBold,
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                     horizontalSpace(24),
@@ -53,16 +84,17 @@ class CustomBuyNowModelBottomSheet extends StatelessWidget {
                     showDialog(
                       context: context,
                       builder: (_) {
+                        final formattedPhone =
+                            details.phone!.startsWith('0')
+                                ? '+2${details.phone}'
+                                : '+20${details.phone}';
                         return CustomDetailsAlertDialog(
-                          dialogColor: Color(0xffB9E5E8),
+                          dialogColor: const Color(0xffB9E5E8),
                           dialogIcon: 'assets/icons/call.svg',
                           dialogHeader: 'Phone Number',
-                          dialogBody: '+2${details.phone}',
+                          dialogBody: formattedPhone,
                           press: () {
-                            launchCustomUrl(
-                              context,
-                              'tel:${details.phone ?? ''}',
-                            );
+                            launchCustomUrl(context, 'tel:$formattedPhone');
                           },
                         );
                       },
@@ -77,18 +109,21 @@ class CustomBuyNowModelBottomSheet extends StatelessWidget {
                     showDialog(
                       context: context,
                       builder: (_) {
+                        final formattedPhone =
+                            details.phone!.startsWith('0')
+                                ? '+2${details.phone}'
+                                : '+20${details.phone}';
                         return CustomDetailsAlertDialog(
-                          dialogColor: Color(0xffB9E5E8),
+                          dialogColor: const Color(0xffB9E5E8),
                           dialogIcon: 'assets/icons/Whatsapp.svg',
                           dialogHeader: 'WhatsApp',
-                          dialogBody: '+2${details.phone}',
+                          dialogBody: formattedPhone,
                           press: () async {
-                            final phone = details.phone ?? '';
                             final message = Uri.encodeComponent(
                               'Hello, I need assistance with...',
                             );
                             final url = Uri.parse(
-                              'https://wa.me/+2$phone?text=$message',
+                              'https://wa.me/$formattedPhone?text=$message',
                             );
 
                             if (await canLaunchUrl(url)) {
@@ -117,7 +152,7 @@ class CustomBuyNowModelBottomSheet extends StatelessWidget {
                       context: context,
                       builder: (_) {
                         return CustomDetailsAlertDialog(
-                          dialogColor: Color(0xffB9E5E8),
+                          dialogColor: const Color(0xffB9E5E8),
                           dialogIcon: 'assets/icons/location.svg',
                           dialogHeader: 'Address',
                           dialogBody: details.location ?? 'Unknown',

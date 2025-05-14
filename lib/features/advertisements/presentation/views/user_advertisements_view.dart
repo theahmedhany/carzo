@@ -1,20 +1,19 @@
-import 'package:carzo/core/helpers/constants.dart';
-import 'package:carzo/core/helpers/extensions.dart';
-import 'package:carzo/core/routing/routes.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
-import 'package:carzo/core/widgets/custom_list_view_loading.dart';
-import 'package:carzo/core/widgets/custom_master_app_bar.dart';
-import 'package:carzo/core/widgets/error_page.dart';
-import 'package:carzo/features/advertisements/data/models/user_advertisements_model.dart';
-import 'package:carzo/features/advertisements/manager/user_advertisements_cubit.dart';
-import 'package:carzo/features/advertisements/manager/user_advertisements_state.dart';
-import 'package:carzo/features/advertisements/presentation/widgets/custom_user_advertisements_card.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_list_view_loading.dart';
+import '../../../../core/widgets/custom_master_app_bar.dart';
+import '../../../../core/widgets/error_page.dart';
+import '../../data/models/user_advertisements_model.dart';
+import '../../manager/user_advertisements_cubit.dart';
+import '../../manager/user_advertisements_state.dart';
+import '../widgets/custom_user_advertisements_card.dart';
 
 class UserAdvertisementsView extends StatelessWidget {
   const UserAdvertisementsView({super.key});

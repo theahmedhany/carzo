@@ -161,12 +161,12 @@ class _SearchViewState extends State<SearchView> {
   }
 
   Widget _buildLoadingIndicator({double? height}) {
-    return SliverFillRemaining(child: CustomGridViewLoading());
+    return const SliverFillRemaining(child: CustomGridViewLoading());
   }
 
   Widget _buildEmptyResultsMessage() {
     return SliverFillRemaining(
-      child: Column(children: [verticalSpace(100), NoCarsAvailable()]),
+      child: Column(children: [verticalSpace(100), const NoCarsAvailable()]),
     );
   }
 }

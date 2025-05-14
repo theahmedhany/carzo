@@ -1,12 +1,14 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/widgets/custom_alert_dialog.dart';
 import '../../data/models/sell_new_car/sell_new_car_request_body.dart';
 import '../../data/repos/sell_new_car_repo.dart';
-import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'sell_new_car_state.dart';
 
 class SellNewCarCubit extends Cubit<SellNewCarState> {
@@ -238,7 +240,7 @@ class SellNewCarCubit extends Cubit<SellNewCarState> {
         },
       );
     } catch (e) {
-      emit(SellNewCarState.error(error: "An unexpected error occurred."));
+      emit(const SellNewCarState.error(error: "An unexpected error occurred."));
     }
   }
 

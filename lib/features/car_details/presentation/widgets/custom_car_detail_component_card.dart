@@ -46,7 +46,7 @@ class CustomCarDetailComponentCard extends StatelessWidget {
                   icon,
                   width: 18.w,
                   height: 18.h,
-                  colorFilter: ColorFilter.mode(
+                  colorFilter: const ColorFilter.mode(
                     AppColors.kMainAppColor,
                     BlendMode.srcIn,
                   ),

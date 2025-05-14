@@ -1,10 +1,10 @@
-import '../../manager/search_cars_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
+import '../../manager/search_cars_cubit.dart';
 
 class CustomSearchBrandList extends StatefulWidget {
   final Function(String) onBrandSelected;
@@ -89,7 +89,7 @@ class _CustomSearchBrandListState extends State<CustomSearchBrandList> {
                       child: Container(
                         height: 40.h,
                         width: 40.w,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: AppColors.kMainAppColor,
                         ),

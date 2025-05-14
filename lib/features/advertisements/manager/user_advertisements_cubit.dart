@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:carzo/features/advertisements/data/models/user_advertisements_model.dart';
-import 'package:carzo/features/advertisements/data/repos/user_advertisements_repo.dart';
-import 'package:carzo/features/advertisements/manager/user_advertisements_state.dart';
 
 import '../../../core/networking/api_error_model.dart';
 import '../../../core/networking/api_network_exceptions.dart';
+import '../data/models/user_advertisements_model.dart';
+import '../data/repos/user_advertisements_repo.dart';
+import 'user_advertisements_state.dart';
 
 class UserAdvertisementsCubit
     extends Cubit<UserAdvertisementsState<List<UserAdvertisementsModel>>> {

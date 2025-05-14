@@ -36,7 +36,7 @@ class CustomHomeDrawer extends StatelessWidget {
                       'assets/icons/close-square.svg',
                       width: 30.w,
                       height: 30.h,
-                      colorFilter: ColorFilter.mode(
+                      colorFilter: const ColorFilter.mode(
                         AppColors.kMainTextColor,
                         BlendMode.srcIn,
                       ),

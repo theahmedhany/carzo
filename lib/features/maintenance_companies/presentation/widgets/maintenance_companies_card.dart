@@ -59,7 +59,7 @@ class MaintenanceCompaniesCard extends StatelessWidget {
                     height: 90.r,
                     fit: BoxFit.contain,
                     placeholder: (context, url) {
-                      return Center(child: CustomProgressIndicator());
+                      return const Center(child: CustomProgressIndicator());
                     },
                     errorWidget: (context, url, error) {
                       return Center(

@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../theming/app_colors.dart';
+import '../../../../core/theming/app_colors.dart';
 
-class CustomMasterIconCircle extends StatelessWidget {
-  const CustomMasterIconCircle({
+class CarShowroomsIconCircle extends StatelessWidget {
+  const CarShowroomsIconCircle({
     super.key,
     required this.image,
     required this.press,
@@ -20,21 +21,19 @@ class CustomMasterIconCircle extends StatelessWidget {
       onPressed: press,
       padding: EdgeInsets.zero,
       child: Container(
-        width: 44.w,
-        height: 44.h,
+        width: 35.w,
+        height: 35.h,
         decoration: ShapeDecoration(
+          color: AppColors.kMainAppColor,
           shape: CircleBorder(
-            side: BorderSide(width: 1.w, color: AppColors.kMainGreyColor),
+            side: BorderSide(width: 1.w, color: AppColors.kMainAppColor),
           ),
         ),
         child: Center(
           child: SvgPicture.asset(
             image,
-            width: 22.w,
-            colorFilter: const ColorFilter.mode(
-              AppColors.kMainAppColor,
-              BlendMode.srcIn,
-            ),
+            width: 20.w,
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),
         ),
       ),

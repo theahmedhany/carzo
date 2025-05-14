@@ -1,14 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carzo/core/helpers/spacing.dart';
-import 'package:carzo/core/theming/app_colors.dart';
-import 'package:carzo/core/theming/app_fonts.dart';
-import 'package:carzo/core/widgets/custom_progress_indicator.dart';
-import 'package:carzo/features/advertisements/manager/user_advertisements_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
+import '../../manager/user_advertisements_cubit.dart';
 
 class CustomUserAdvertisementsCard extends StatelessWidget {
   const CustomUserAdvertisementsCard({
@@ -57,7 +58,7 @@ class CustomUserAdvertisementsCard extends StatelessWidget {
                     height: double.infinity,
                     fit: BoxFit.fill,
                     placeholder: (context, url) {
-                      return Center(child: CustomProgressIndicator());
+                      return const Center(child: CustomProgressIndicator());
                     },
                     errorWidget: (context, url, error) {
                       return Center(
@@ -144,7 +145,7 @@ class CustomUserAdvertisementsCard extends StatelessWidget {
                                         shape: BoxShape.circle,
                                       ),
                                       padding: EdgeInsets.all(10.r),
-                                      child: Center(
+                                      child: const Center(
                                         child: Icon(
                                           CupertinoIcons.delete,
                                           color: Colors.white,
@@ -243,10 +244,10 @@ class CustomUserAdvertisementsCard extends StatelessWidget {
                       width: 1.5,
                     ),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Icon(
                       CupertinoIcons.delete,
-                      color: const Color(0xff767676),
+                      color: Color(0xff767676),
                     ),
                   ),
                 ),

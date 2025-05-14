@@ -55,7 +55,7 @@ class LoginBlocListener extends StatelessWidget {
       context: context,
       barrierDismissible: false,
       barrierColor: AppColors.kMainAppColor.withValues(alpha: 0.3),
-      builder: (context) => Center(child: const MainLoadingIndicator()),
+      builder: (context) => const Center(child: MainLoadingIndicator()),
     );
   }
 }

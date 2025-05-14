@@ -67,7 +67,7 @@ class PopularCarsSection extends StatelessWidget {
                   );
                 },
                 error: (errorMsg) {
-                  return CustomSellCarRecommendedError();
+                  return const CustomSellCarRecommendedError();
                 },
               );
             },

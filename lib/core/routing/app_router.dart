@@ -1,13 +1,13 @@
-import 'package:carzo/features/advertisements/data/repos/user_advertisements_repo.dart';
-import 'package:carzo/features/advertisements/manager/user_advertisements_cubit.dart';
-import 'package:carzo/features/advertisements/presentation/views/user_advertisements_view.dart';
-import 'package:carzo/features/brands/data/repos/all_brands_repo.dart';
-import 'package:carzo/features/brands/manager/All_brands/all_brands_cubit.dart';
-import 'package:carzo/features/brands/manager/brand_cars/brand_cars_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/advertisements/data/repos/user_advertisements_repo.dart';
+import '../../features/advertisements/manager/user_advertisements_cubit.dart';
+import '../../features/advertisements/presentation/views/user_advertisements_view.dart';
+import '../../features/brands/data/repos/all_brands_repo.dart';
 import '../../features/brands/data/repos/brand_cars_repo.dart';
+import '../../features/brands/manager/All_brands/all_brands_cubit.dart';
+import '../../features/brands/manager/brand_cars/brand_cars_cubit.dart';
 import '../../features/brands/presentation/views/brands_cars_view.dart';
 import '../../features/brands/presentation/views/brands_view.dart';
 import '../../features/car_details/data/repos/car_details_repo.dart';
@@ -79,7 +79,7 @@ class AppRouter {
     switch (settings.name) {
       // Get Started View
       case Routes.getStartedView:
-        return MaterialPageRoute(builder: (_) => GetStartedView());
+        return MaterialPageRoute(builder: (_) => const GetStartedView());
 
       // Home View
       case Routes.homeView:
@@ -101,7 +101,7 @@ class AppRouter {
                               ..emitGetFilteredCars(filterSearchByBrand),
                   ),
                 ],
-                child: HomeView(),
+                child: const HomeView(),
               ),
         );
 
@@ -125,7 +125,7 @@ class AppRouter {
                 create:
                     (context) =>
                         AllCarsCubit(getIt<AllCarsRepo>())..emitGetAllCars(),
-                child: RecommendForYouView(),
+                child: const RecommendForYouView(),
               ),
         );
 
@@ -138,7 +138,7 @@ class AppRouter {
                     (context) =>
                         UsedCarsCubit(getIt<UsedCarsRepo>())
                           ..emitGetAllUsedCars(),
-                child: UsedCarsView(),
+                child: const UsedCarsView(),
               ),
         );
 
@@ -151,7 +151,7 @@ class AppRouter {
                     (context) =>
                         NewCarsCubit(getIt<NewCarsRepo>())
                           ..emitGetAllNewCars(newCarsBrandName),
-                child: NewCarsView(),
+                child: const NewCarsView(),
               ),
         );
 
@@ -173,7 +173,7 @@ class AppRouter {
 
       // Search View
       case Routes.searchView:
-        return MaterialPageRoute(builder: (_) => SearchView());
+        return MaterialPageRoute(builder: (_) => const SearchView());
 
       // Favorite View
       case Routes.favoriteView:
@@ -185,7 +185,7 @@ class AppRouter {
           builder:
               (_) => BlocProvider(
                 create: (context) => getIt<SignupCubit>(),
-                child: SignupView(),
+                child: const SignupView(),
               ),
         );
 
@@ -195,13 +195,13 @@ class AppRouter {
           builder:
               (_) => BlocProvider(
                 create: (context) => getIt<LoginCubit>(),
-                child: LoginView(),
+                child: const LoginView(),
               ),
         );
 
       // Personal Details View
       case Routes.personalDetailsView:
-        return MaterialPageRoute(builder: (_) => PersonalDetailsView());
+        return MaterialPageRoute(builder: (_) => const PersonalDetailsView());
 
       // Edit Profile View
       case Routes.editProfileView:
@@ -229,7 +229,7 @@ class AppRouter {
                 create:
                     (context) =>
                         AllCarsCubit(getIt<AllCarsRepo>())..emitGetAllCars(),
-                child: SellCarView(),
+                child: const SellCarView(),
               ),
         );
 
@@ -253,7 +253,7 @@ class AppRouter {
                               ..emitGetAllCarShowrooms(),
                   ),
                 ],
-                child: SellNewCarsView(),
+                child: const SellNewCarsView(),
               ),
         );
 
@@ -277,7 +277,7 @@ class AppRouter {
                               ..emitGetAllCarShowrooms(),
                   ),
                 ],
-                child: SellUsedCarView(),
+                child: const SellUsedCarView(),
               ),
         );
 
@@ -297,7 +297,7 @@ class AppRouter {
                               ..emitGetAllBrands(),
                   ),
                 ],
-                child: SellPersonalCarView(),
+                child: const SellPersonalCarView(),
               ),
         );
 
@@ -310,7 +310,7 @@ class AppRouter {
                     (context) =>
                         ShowroomsCubit(getIt<ShowroomsRepo>())
                           ..emitGetAllCarShowrooms(),
-                child: FullCarShowroomsView(),
+                child: const FullCarShowroomsView(),
               ),
         );
 
@@ -337,7 +337,7 @@ class AppRouter {
                     (context) =>
                         InsuranceCompaniesCubit(getIt<InsuranceCompaniesRepo>())
                           ..emitGetAllInsuranceCompanies(),
-                child: InsuranceCompaniesView(),
+                child: const InsuranceCompaniesView(),
               ),
         );
 
@@ -357,7 +357,7 @@ class AppRouter {
                     (context) => MaintenanceCompaniesCubit(
                       getIt<MaintenanceCompaniesRepo>(),
                     )..emitGetAllMaintenanceCompanies(),
-                child: MaintenanceCompaniesView(),
+                child: const MaintenanceCompaniesView(),
               ),
         );
 
@@ -377,7 +377,7 @@ class AppRouter {
                     (context) =>
                         RescueCompaniesCubit(getIt<RescueCompaniesRepo>())
                           ..emitGetAllRescueCompanies(),
-                child: RescueCompaniesView(),
+                child: const RescueCompaniesView(),
               ),
         );
 
@@ -414,7 +414,7 @@ class AppRouter {
                     (context) =>
                         UserAdvertisementsCubit(getIt<UserAdvertisementsRepo>())
                           ..emitGetUserAdvertisements(),
-                child: UserAdvertisementsView(),
+                child: const UserAdvertisementsView(),
               ),
         );
 

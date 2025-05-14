@@ -1,13 +1,14 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
+
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/widgets/custom_alert_dialog.dart';
 import '../../data/models/sell_used_car/sell_used_car_request_body.dart';
 import '../../data/repos/sell_used_car_repo.dart';
 import 'sell_used_car_state.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
 
 class SellUsedCarCubit extends Cubit<SellUsedCarState> {
   SellUsedCarCubit(this.sellUsedCarRepo) : super(const SellUsedCarState.idle());
@@ -200,7 +201,9 @@ class SellUsedCarCubit extends Cubit<SellUsedCarState> {
         },
       );
     } catch (e) {
-      emit(SellUsedCarState.error(error: "An unexpected error occurred."));
+      emit(
+        const SellUsedCarState.error(error: "An unexpected error occurred."),
+      );
     }
   }
 

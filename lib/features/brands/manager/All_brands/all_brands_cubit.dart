@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:carzo/core/networking/api_error_model.dart';
-import 'package:carzo/core/networking/api_network_exceptions.dart';
-import 'package:carzo/features/brands/data/models/all_brands/all_brands_model.dart';
-import 'package:carzo/features/brands/data/repos/all_brands_repo.dart';
-import 'package:carzo/features/brands/manager/All_brands/all_brands_state.dart';
+
+import '../../../../core/networking/api_error_model.dart';
+import '../../../../core/networking/api_network_exceptions.dart';
+import '../../data/models/all_brands/all_brands_model.dart';
+import '../../data/repos/all_brands_repo.dart';
+import 'all_brands_state.dart';
 
 class AllBrandsCubit extends Cubit<AllBrandsState<List<AllBrandsModel>>> {
   final AllBrandsRepo allBrandsRepo;

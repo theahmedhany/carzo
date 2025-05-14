@@ -1,8 +1,8 @@
-import 'package:carzo/core/theming/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../core/theming/app_colors.dart';
 
 class CustomLoadingTextField extends StatelessWidget {
   const CustomLoadingTextField({
@@ -39,7 +39,7 @@ class CustomLoadingTextField extends StatelessWidget {
           padding: EdgeInsets.only(left: 18.r, right: 12.r),
           child: SvgPicture.asset(
             icon,
-            colorFilter: ColorFilter.mode(
+            colorFilter: const ColorFilter.mode(
               AppColors.kMainAppColor,
               BlendMode.srcIn,
             ),
@@ -57,15 +57,15 @@ class CustomLoadingTextField extends StatelessWidget {
         fillColor: Colors.white.withValues(alpha: 0.8),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(width: 1.5.w),
+          borderSide: BorderSide(width: 1.5.w, color: AppColors.kMainGreyColor),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(width: 1.5, color: AppColors.kMainGreyColor),
+          borderSide: BorderSide(width: 1.5.w, color: AppColors.kMainGreyColor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(width: 1.5, color: AppColors.kMainGreyColor),
+          borderSide: BorderSide(width: 1.5.w, color: AppColors.kMainGreyColor),
         ),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.red, width: 1),

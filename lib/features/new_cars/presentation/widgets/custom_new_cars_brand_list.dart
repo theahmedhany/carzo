@@ -85,7 +85,7 @@ class _CustomNewCarsBrandListState extends State<CustomNewCarsBrandList> {
                       child: Container(
                         height: 40.h,
                         width: 40.w,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: AppColors.kMainAppColor,
                         ),

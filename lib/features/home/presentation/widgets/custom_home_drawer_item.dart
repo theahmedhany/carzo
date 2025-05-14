@@ -23,7 +23,7 @@ class CustomHomeDrawerItem extends StatelessWidget {
       leading: SvgPicture.asset(
         icon,
         width: 24.w,
-        colorFilter: ColorFilter.mode(
+        colorFilter: const ColorFilter.mode(
           AppColors.kMainTextColor,
           BlendMode.srcIn,
         ),
@@ -32,7 +32,7 @@ class CustomHomeDrawerItem extends StatelessWidget {
       trailing: SvgPicture.asset(
         'assets/icons/arrow-right.svg',
         width: 20.w,
-        colorFilter: ColorFilter.mode(
+        colorFilter: const ColorFilter.mode(
           AppColors.kMainTextColor,
           BlendMode.srcIn,
         ),

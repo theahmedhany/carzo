@@ -16,6 +16,7 @@ class CarDetailsModel {
   List<Url>? url;
   String? phone;
   String? location;
+  String? dealershipImg;
 
   CarDetailsModel({
     this.id,

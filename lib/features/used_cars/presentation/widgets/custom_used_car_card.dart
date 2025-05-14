@@ -61,7 +61,7 @@ class CustomUsedCarCard extends StatelessWidget {
                     height: double.infinity,
                     fit: BoxFit.fill,
                     placeholder: (context, url) {
-                      return Center(child: CustomProgressIndicator());
+                      return const Center(child: CustomProgressIndicator());
                     },
                     errorWidget: (context, url, error) {
                       return Center(

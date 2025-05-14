@@ -1,5 +1,3 @@
-import 'package:carzo/features/brands/manager/brand_cars/brand_cars_cubit.dart';
-import 'package:carzo/features/brands/manager/brand_cars/brand_cars_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +9,8 @@ import '../../../../core/routing/routes.dart';
 import '../../../../core/widgets/custom_grid_view_loading.dart';
 import '../../../../core/widgets/error_page.dart';
 import '../../../../core/widgets/no_cars_available.dart';
+import '../../manager/brand_cars/brand_cars_cubit.dart';
+import '../../manager/brand_cars/brand_cars_state.dart';
 import 'custom_brands_car_card.dart';
 
 class BrandsCarsGridView extends StatelessWidget {
@@ -25,7 +25,9 @@ class BrandsCarsGridView extends StatelessWidget {
           loading: () => const Center(child: CustomGridViewLoading()),
           success: (brandCars) {
             if (brandCars.isEmpty) {
-              return Column(children: [verticalSpace(150), NoCarsAvailable()]);
+              return Column(
+                children: [verticalSpace(150), const NoCarsAvailable()],
+              );
             }
             return GridView.builder(
               shrinkWrap: true,

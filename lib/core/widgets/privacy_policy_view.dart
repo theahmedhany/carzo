@@ -39,7 +39,7 @@ class PrivacyPolicyView extends StatelessWidget {
                           width: 100.w,
                           height: 100.h,
                           'assets/icons/privacy-policy.svg',
-                          colorFilter: ColorFilter.mode(
+                          colorFilter: const ColorFilter.mode(
                             AppColors.kMainAppColor,
                             BlendMode.srcIn,
                           ),

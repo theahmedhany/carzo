@@ -24,7 +24,7 @@ class CustomHomeRecommendForYouList extends StatelessWidget {
           loading: () => const Center(child: CustomHomeShimmerLoading()),
           success: (allCars) {
             if (allCars.isEmpty) {
-              return Center(
+              return const Center(
                 child: Text(
                   "No cars available",
                   style: TextStyle(color: AppColors.kSecondaryTextColor),
@@ -52,7 +52,7 @@ class CustomHomeRecommendForYouList extends StatelessWidget {
             );
           },
           error: (errorMsg) {
-            return CustomHomeShimmerError();
+            return const CustomHomeShimmerError();
           },
         );
       },

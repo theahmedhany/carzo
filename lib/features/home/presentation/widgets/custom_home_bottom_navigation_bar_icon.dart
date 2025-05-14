@@ -32,7 +32,7 @@ class CustomHomeBottomNavigationBarIcon extends StatelessWidget {
             decoration: BoxDecoration(
               color:
                   selected
-                      ? Color(0xffB9E5E8).withValues(alpha: 0.4)
+                      ? const Color(0xffB9E5E8).withValues(alpha: 0.4)
                       : Colors.transparent,
               shape: BoxShape.circle,
             ),
@@ -40,7 +40,7 @@ class CustomHomeBottomNavigationBarIcon extends StatelessWidget {
               child: SvgPicture.asset(
                 icon,
                 colorFilter: ColorFilter.mode(
-                  selected ? Color(0xffB9E5E8) : Colors.white,
+                  selected ? const Color(0xffB9E5E8) : Colors.white,
                   BlendMode.srcIn,
                 ),
                 width: 24.w,
@@ -52,7 +52,7 @@ class CustomHomeBottomNavigationBarIcon extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-              color: selected ? Color(0xffB9E5E8) : Colors.white,
+              color: selected ? const Color(0xffB9E5E8) : Colors.white,
               fontSize: 12.sp,
               fontWeight: selected ? FontWeight.w700 : FontWeight.w400,
             ),

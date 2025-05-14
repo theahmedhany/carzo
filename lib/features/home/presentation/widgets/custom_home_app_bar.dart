@@ -49,7 +49,7 @@ class CustomHomeAppBar extends StatelessWidget {
                       child: SvgPicture.asset(
                         'assets/icons/notification.svg',
                         width: 22.w,
-                        colorFilter: ColorFilter.mode(
+                        colorFilter: const ColorFilter.mode(
                           AppColors.kMainAppColor,
                           BlendMode.srcIn,
                         ),
@@ -78,7 +78,7 @@ class CustomHomeAppBar extends StatelessWidget {
                       child: SvgPicture.asset(
                         'assets/icons/user.svg',
                         width: 26.w,
-                        colorFilter: ColorFilter.mode(
+                        colorFilter: const ColorFilter.mode(
                           AppColors.kMainAppColor,
                           BlendMode.srcIn,
                         ),
@@ -89,7 +89,7 @@ class CustomHomeAppBar extends StatelessWidget {
               ],
             ),
           ),
-          Divider(thickness: 1, color: AppColors.kMainGreyColor),
+          const Divider(thickness: 1, color: AppColors.kMainGreyColor),
         ],
       ),
     );

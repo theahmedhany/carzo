@@ -37,7 +37,7 @@ class CustomSearchCarCard extends StatelessWidget {
         decoration: ShapeDecoration(
           color: const Color(0xFFF0F0F0),
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: AppColors.kMainGreyColor),
+            side: const BorderSide(width: 1, color: AppColors.kMainGreyColor),
             borderRadius: BorderRadius.circular(15),
           ),
         ),
@@ -47,7 +47,7 @@ class CustomSearchCarCard extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: AppColors.kSecondaryGreyColor,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
@@ -55,7 +55,7 @@ class CustomSearchCarCard extends StatelessWidget {
                       ),
                     ),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),
                       ),
@@ -65,7 +65,7 @@ class CustomSearchCarCard extends StatelessWidget {
                         width: double.infinity,
                         height: double.infinity,
                         placeholder: (context, url) {
-                          return Center(child: CustomProgressIndicator());
+                          return const Center(child: CustomProgressIndicator());
                         },
                         errorWidget: (context, url, error) {
                           return Center(

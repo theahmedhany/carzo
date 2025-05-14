@@ -30,11 +30,17 @@ class CustomEditProfileTextField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(width: 1.5, color: AppColors.kMainGreyColor),
+          borderSide: const BorderSide(
+            width: 1.5,
+            color: AppColors.kMainGreyColor,
+          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(width: 1.5, color: AppColors.kMainGreyColor),
+          borderSide: const BorderSide(
+            width: 1.5,
+            color: AppColors.kMainGreyColor,
+          ),
         ),
       ),
     );

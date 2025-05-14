@@ -122,7 +122,7 @@ class CustomSellCarRecommendedShimmerLoading extends StatelessWidget {
                           'assets/icons/heart.svg',
                           width: 15,
                           height: 15,
-                          colorFilter: ColorFilter.mode(
+                          colorFilter: const ColorFilter.mode(
                             AppColors.kMainGreyColor,
                             BlendMode.srcIn,
                           ),

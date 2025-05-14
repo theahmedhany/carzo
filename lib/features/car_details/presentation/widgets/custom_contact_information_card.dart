@@ -36,7 +36,7 @@ class CustomContactInformationCard extends StatelessWidget {
               width: 25.w,
               child: SvgPicture.asset(
                 icon,
-                colorFilter: ColorFilter.mode(
+                colorFilter: const ColorFilter.mode(
                   AppColors.kMainAppColor,
                   BlendMode.srcIn,
                 ),

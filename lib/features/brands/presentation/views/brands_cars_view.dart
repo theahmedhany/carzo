@@ -22,7 +22,7 @@ class BrandsCarsView extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               slivers: [
                 SliverToBoxAdapter(child: verticalSpace(12)),
-                SliverToBoxAdapter(child: BrandsCarsGridView()),
+                const SliverToBoxAdapter(child: BrandsCarsGridView()),
                 SliverToBoxAdapter(child: verticalSpace(20)),
               ],
             ),

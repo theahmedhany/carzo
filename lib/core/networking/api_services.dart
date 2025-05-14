@@ -1,8 +1,9 @@
-import 'package:carzo/features/advertisements/data/models/user_advertisements_model.dart';
-import 'package:carzo/features/brands/data/models/all_brands/all_brands_model.dart';
-import 'package:carzo/features/brands/data/models/brand_cars/brand_cars_model.dart';
+import 'package:dio/dio.dart';
+import 'package:retrofit/retrofit.dart';
 
-import 'api_constants.dart';
+import '../../features/advertisements/data/models/user_advertisements_model.dart';
+import '../../features/brands/data/models/all_brands/all_brands_model.dart';
+import '../../features/brands/data/models/brand_cars/brand_cars_model.dart';
 import '../../features/car_details/data/models/car_details_model.dart';
 import '../../features/car_showrooms/data/models/showroom_cars/showroom_cars_model.dart';
 import '../../features/car_showrooms/data/models/showrooms/showrooms_model.dart';
@@ -20,8 +21,7 @@ import '../../features/sell_car/data/models/sell_new_car/sell_new_car_response.d
 import '../../features/sell_car/data/models/sell_personal_car/sell_personal_car_response.dart';
 import '../../features/sell_car/data/models/sell_used_car/sell_used_car_response.dart';
 import '../../features/used_cars/data/models/used_car_model.dart';
-import 'package:dio/dio.dart';
-import 'package:retrofit/retrofit.dart';
+import 'api_constants.dart';
 
 part 'api_services.g.dart';
 

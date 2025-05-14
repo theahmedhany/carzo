@@ -1,9 +1,8 @@
-import 'package:carzo/features/advertisements/data/models/user_advertisements_model.dart';
-
 import '../../../../core/networking/api_network_exceptions.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_services.dart';
 import '../../../../core/networking/dio_factory.dart';
+import '../models/user_advertisements_model.dart';
 
 class UserAdvertisementsRepo {
   final ApiServices apiServices;

@@ -76,7 +76,7 @@ class _SignupViewState extends State<SignupView> {
                         'assets/icons/arrow-square-left.svg',
                         width: 26.r,
                         height: 26.r,
-                        colorFilter: ColorFilter.mode(
+                        colorFilter: const ColorFilter.mode(
                           AppColors.kMainAppColor,
                           BlendMode.srcIn,
                         ),
@@ -266,7 +266,7 @@ class _SignupViewState extends State<SignupView> {
                         ),
                       ),
                       verticalSpace(28),
-                      SignupBlocListener(),
+                      const SignupBlocListener(),
                     ],
                   ),
                 ),

@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/widgets/custom_alert_dialog.dart';
@@ -5,8 +8,6 @@ import '../../../../core/widgets/main_loading_indicator.dart';
 import '../../manager/sell_used_car/sell_used_car_cubit.dart';
 import '../../manager/sell_used_car/sell_used_car_state.dart';
 import 'custom_sell_car_alert_dialog.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SellUsedCarBlocListener extends StatelessWidget {
   const SellUsedCarBlocListener({super.key});
@@ -53,7 +54,7 @@ class SellUsedCarBlocListener extends StatelessWidget {
       context: context,
       barrierDismissible: false,
       barrierColor: AppColors.kMainAppColor.withValues(alpha: 0.3),
-      builder: (context) => Center(child: const MainLoadingIndicator()),
+      builder: (context) => const Center(child: MainLoadingIndicator()),
     );
   }
 

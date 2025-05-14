@@ -50,7 +50,7 @@ class RescueCompaniesDetailsView extends StatelessWidget {
                       height: 200.r,
                       fit: BoxFit.contain,
                       placeholder: (context, url) {
-                        return Center(child: CustomProgressIndicator());
+                        return const Center(child: CustomProgressIndicator());
                       },
                       errorWidget: (context, url, error) {
                         return Center(
@@ -90,15 +90,16 @@ class RescueCompaniesDetailsView extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (_) {
+                      final formattedPhone =
+                          company.phone1.toString().startsWith('0')
+                              ? '+2${company.phone1.toString()}'
+                              : '+20${company.phone1.toString()}';
                       return CustomCompanyDetailsAlert(
                         dialogIcon: 'assets/icons/call.svg',
                         dialogHeader: 'Phone Number',
-                        dialogBody: '+2${company.phone1}',
+                        dialogBody: formattedPhone,
                         press: () {
-                          launchCustomUrl(
-                            context,
-                            'tel:+2${company.phone1 ?? ''}',
-                          );
+                          launchCustomUrl(context, 'tel:$formattedPhone');
                         },
                       );
                     },
@@ -113,17 +114,20 @@ class RescueCompaniesDetailsView extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (_) {
+                      final formattedPhone =
+                          company.whatsApp.toString().startsWith('0')
+                              ? '+2${company.whatsApp.toString()}'
+                              : '+20${company.whatsApp.toString()}';
                       return CustomCompanyDetailsAlert(
                         dialogIcon: 'assets/icons/Whatsapp.svg',
                         dialogHeader: 'WhatsApp',
-                        dialogBody: '+2${company.whatsApp}',
+                        dialogBody: formattedPhone,
                         press: () async {
-                          final phone = company.whatsApp ?? '';
                           final message = Uri.encodeComponent(
                             'Hello, I need assistance with...',
                           );
                           final url = Uri.parse(
-                            'https://wa.me/+2$phone?text=$message',
+                            'https://wa.me/$formattedPhone?text=$message',
                           );
 
                           if (await canLaunchUrl(url)) {

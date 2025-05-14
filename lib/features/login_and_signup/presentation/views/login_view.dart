@@ -84,14 +84,14 @@ class _LoginViewState extends State<LoginView> {
                           ),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                               width: 1.5,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.redAccent,
                               width: 2,
                             ),
@@ -135,14 +135,14 @@ class _LoginViewState extends State<LoginView> {
                           ),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                               width: 1.5,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.redAccent,
                               width: 2,
                             ),
@@ -222,7 +222,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-                LoginBlocListener(),
+                const LoginBlocListener(),
               ],
             ),
           ),

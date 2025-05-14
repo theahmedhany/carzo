@@ -14,7 +14,7 @@ void showSnackBar(BuildContext context, String message) {
           ScaffoldMessenger.of(context).hideCurrentSnackBar();
         },
       ),
-      backgroundColor: Color(0xFFB9E5E8),
+      backgroundColor: const Color(0xFFB9E5E8),
       content: Text(message, style: AppFonts.font12DarkMedium),
     ),
   );

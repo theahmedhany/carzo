@@ -1,6 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import '../../../../core/widgets/custom_progress_indicator.dart';
-import '../../data/models/showrooms/showrooms_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_fonts.dart';
+import '../../../../core/widgets/custom_progress_indicator.dart';
+import '../../data/models/showrooms/showrooms_model.dart';
 
 class CustomAllCarShowroomsCard extends StatelessWidget {
   const CustomAllCarShowroomsCard({
@@ -59,7 +59,7 @@ class CustomAllCarShowroomsCard extends StatelessWidget {
                     height: 90.r,
                     fit: BoxFit.contain,
                     placeholder: (context, url) {
-                      return Center(child: CustomProgressIndicator());
+                      return const Center(child: CustomProgressIndicator());
                     },
                     errorWidget: (context, url, error) {
                       return Center(

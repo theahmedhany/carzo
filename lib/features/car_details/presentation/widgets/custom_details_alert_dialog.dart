@@ -51,7 +51,7 @@ class CustomDetailsAlertDialog extends StatelessWidget {
                     width: 26.w,
                     height: 26.h,
                     dialogIcon,
-                    colorFilter: ColorFilter.mode(
+                    colorFilter: const ColorFilter.mode(
                       Colors.white,
                       BlendMode.srcIn,
                     ),

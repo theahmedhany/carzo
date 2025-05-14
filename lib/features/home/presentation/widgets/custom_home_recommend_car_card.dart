@@ -37,7 +37,7 @@ class CustomHomeRecommendCarCard extends StatelessWidget {
         decoration: ShapeDecoration(
           color: const Color(0xFFF0F0F0),
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: AppColors.kMainGreyColor),
+            side: const BorderSide(width: 1, color: AppColors.kMainGreyColor),
             borderRadius: BorderRadius.circular(15),
           ),
         ),
@@ -47,7 +47,7 @@ class CustomHomeRecommendCarCard extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: AppColors.kSecondaryGreyColor,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
@@ -55,7 +55,7 @@ class CustomHomeRecommendCarCard extends StatelessWidget {
                       ),
                     ),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),
                       ),
@@ -66,7 +66,7 @@ class CustomHomeRecommendCarCard extends StatelessWidget {
                         height: double.infinity,
                         placeholder:
                             (context, url) =>
-                                Center(child: CustomProgressIndicator()),
+                                const Center(child: CustomProgressIndicator()),
                         errorWidget:
                             (context, url, error) => Center(
                               child: Image.asset(

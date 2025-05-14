@@ -26,6 +26,4 @@ class CarDetailsCubit extends Cubit<CarDetailsState<CarDetailsModel>> {
       },
     );
   }
-
-  getCarDetails(String carId) {}
 }

@@ -1,12 +1,12 @@
-import 'package:carzo/features/advertisements/data/repos/user_advertisements_repo.dart';
-import 'package:carzo/features/advertisements/manager/user_advertisements_cubit.dart';
-import 'package:carzo/features/brands/data/repos/all_brands_repo.dart';
-import 'package:carzo/features/brands/manager/All_brands/all_brands_cubit.dart';
-import 'package:carzo/features/brands/manager/brand_cars/brand_cars_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/advertisements/data/repos/user_advertisements_repo.dart';
+import '../../features/advertisements/manager/user_advertisements_cubit.dart';
+import '../../features/brands/data/repos/all_brands_repo.dart';
 import '../../features/brands/data/repos/brand_cars_repo.dart';
+import '../../features/brands/manager/All_brands/all_brands_cubit.dart';
+import '../../features/brands/manager/brand_cars/brand_cars_cubit.dart';
 import '../../features/car_details/data/repos/car_details_repo.dart';
 import '../../features/car_details/manager/car_details_cubit.dart';
 import '../../features/car_showrooms/data/repos/showroom_cars_repo.dart';
@@ -44,7 +44,7 @@ final getIt = GetIt.instance;
 
 Future<void> initGetIt() async {
   // Dio & ApiService
-  Dio dio = await DioFactory.getDio();
+  Dio dio = DioFactory.getDio();
   getIt.registerLazySingleton<ApiServices>(() => ApiServices(dio));
 
   // Used Cars
