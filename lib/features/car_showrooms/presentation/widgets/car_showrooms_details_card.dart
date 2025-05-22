@@ -99,7 +99,7 @@ class CarShowroomsDetailsCard extends StatelessWidget {
                           builder: (_) {
                             return CustomCompanyDetailsAlert(
                               dialogIcon: 'assets/icons/location.svg',
-                              dialogHeader: 'Address',
+                              dialogHeader: 'Location',
                               dialogBody: company.branch1 ?? 'Unknown',
                               press: () {
                                 launchCustomUrl(context, company.branch1 ?? '');

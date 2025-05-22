@@ -146,7 +146,7 @@ class MaintenanceCompaniesDetailsView extends StatelessWidget {
               ),
               verticalSpace(12),
               CustomCompanyDetailsDataBox(
-                title: 'Address',
+                title: 'Location',
                 icon: 'assets/icons/location.svg',
                 press: () {
                   showDialog(
@@ -154,7 +154,7 @@ class MaintenanceCompaniesDetailsView extends StatelessWidget {
                     builder: (_) {
                       return CustomCompanyDetailsAlert(
                         dialogIcon: 'assets/icons/location.svg',
-                        dialogHeader: 'Address',
+                        dialogHeader: 'Location',
                         dialogBody: company.location ?? 'Unknown',
                         press: () {
                           launchCustomUrl(context, company.location ?? '');

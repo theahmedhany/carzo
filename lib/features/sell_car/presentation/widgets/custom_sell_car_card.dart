@@ -1,3 +1,4 @@
+import 'package:carzo/core/helpers/spacing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,15 +39,19 @@ class CustomSellCarCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Image.asset(image, width: 190.w, height: 90.h, fit: BoxFit.contain),
-            const Spacer(),
-            Text(
-              title.length > 12 ? '${title.substring(0, 12)}...' : title,
-              maxLines: 1,
-              style: AppFonts.font18DarkSemiBold.copyWith(
-                overflow: TextOverflow.ellipsis,
+            horizontalSpace(4),
+            Flexible(
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  title,
+                  maxLines: 1,
+                  style: AppFonts.font18DarkSemiBold.copyWith(
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ),
             ),
-            const Spacer(),
           ],
         ),
       ),

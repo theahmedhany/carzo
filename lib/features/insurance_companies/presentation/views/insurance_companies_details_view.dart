@@ -84,22 +84,21 @@ class InsuranceCompaniesDetailsView extends StatelessWidget {
               ),
               verticalSpace(28),
               CustomCompanyDetailsDataBox(
-                title: 'Phone Number',
+                title: 'Hotline',
                 icon: 'assets/icons/call.svg',
                 press: () {
                   showDialog(
                     context: context,
                     builder: (_) {
-                      final formattedPhone =
-                          company.phone.toString().startsWith('0')
-                              ? '+2${company.phone.toString()}'
-                              : '+20${company.phone.toString()}';
                       return CustomCompanyDetailsAlert(
                         dialogIcon: 'assets/icons/call.svg',
-                        dialogHeader: 'Phone Number',
-                        dialogBody: formattedPhone,
+                        dialogHeader: 'Hotline',
+                        dialogBody: company.phone.toString(),
                         press: () {
-                          launchCustomUrl(context, 'tel:$formattedPhone');
+                          launchCustomUrl(
+                            context,
+                            'tel:${company.phone.toString()}',
+                          );
                         },
                       );
                     },
@@ -146,7 +145,7 @@ class InsuranceCompaniesDetailsView extends StatelessWidget {
               ),
               verticalSpace(12),
               CustomCompanyDetailsDataBox(
-                title: 'Address',
+                title: 'Location',
                 icon: 'assets/icons/location.svg',
                 press: () {
                   showDialog(
@@ -154,7 +153,7 @@ class InsuranceCompaniesDetailsView extends StatelessWidget {
                     builder: (_) {
                       return CustomCompanyDetailsAlert(
                         dialogIcon: 'assets/icons/location.svg',
-                        dialogHeader: 'Address',
+                        dialogHeader: 'Location',
                         dialogBody: company.location ?? 'Unknown',
                         press: () {
                           launchCustomUrl(context, company.location ?? '');
