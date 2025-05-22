@@ -72,127 +72,130 @@ class CarShowroomsDetailsCard extends StatelessWidget {
               ),
             ),
           ),
-
-          const Spacer(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-
-            children: [
-              Text(
-                title.length > 24 ? '${title.substring(0, 24)}...' : title,
-
-                style: AppFonts.font18DarkSemiBold,
-              ),
-              verticalSpace(8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CarShowroomsIconCircle(
-                    image: 'assets/icons/location.svg',
-                    press: () {
-                      showDialog(
-                        context: context,
-                        builder: (_) {
-                          return CustomCompanyDetailsAlert(
-                            dialogIcon: 'assets/icons/location.svg',
-                            dialogHeader: 'Address',
-                            dialogBody: company.branch1 ?? 'Unknown',
-                            press: () {
-                              launchCustomUrl(context, company.branch1 ?? '');
-                            },
-                          );
-                        },
-                      );
-                    },
+          horizontalSpace(16),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppFonts.font18DarkSemiBold,
                   ),
-                  CarShowroomsIconCircle(
-                    image: 'assets/icons/call.svg',
-                    press: () {
-                      showDialog(
-                        context: context,
-                        builder: (_) {
-                          final formattedPhone =
-                              company.phone1.toString().startsWith('0')
-                                  ? '+2${company.phone1.toString()}'
-                                  : '+20${company.phone1.toString()}';
-                          return CustomCompanyDetailsAlert(
-                            dialogIcon: 'assets/icons/call.svg',
-                            dialogHeader: 'Phone Number',
-                            dialogBody: formattedPhone,
-                            press: () {
-                              launchCustomUrl(context, 'tel:$formattedPhone');
-                            },
-                          );
-                        },
-                      );
-                    },
-                  ),
-                  CarShowroomsIconCircle(
-                    image: 'assets/icons/Whatsapp.svg',
-                    press: () {
-                      showDialog(
-                        context: context,
-                        builder: (_) {
-                          final formattedPhone =
-                              company.whatsApp1.toString().startsWith('0')
-                                  ? '+2${company.whatsApp1.toString()}'
-                                  : '+20${company.whatsApp1.toString()}';
-                          return CustomCompanyDetailsAlert(
-                            dialogIcon: 'assets/icons/Whatsapp.svg',
-                            dialogHeader: 'WhatsApp',
-                            dialogBody: formattedPhone,
-                            press: () async {
-                              final message = Uri.encodeComponent(
-                                'Hello, I need assistance with...',
-                              );
-                              final url = Uri.parse(
-                                'https://wa.me/$formattedPhone?text=$message',
-                              );
-
-                              if (await canLaunchUrl(url)) {
-                                await launchUrl(
-                                  url,
-                                  mode: LaunchMode.externalApplication,
+                ),
+                verticalSpace(8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CarShowroomsIconCircle(
+                      image: 'assets/icons/location.svg',
+                      press: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) {
+                            return CustomCompanyDetailsAlert(
+                              dialogIcon: 'assets/icons/location.svg',
+                              dialogHeader: 'Address',
+                              dialogBody: company.branch1 ?? 'Unknown',
+                              press: () {
+                                launchCustomUrl(context, company.branch1 ?? '');
+                              },
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    CarShowroomsIconCircle(
+                      image: 'assets/icons/call.svg',
+                      press: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) {
+                            final formattedPhone =
+                                company.phone1.toString().startsWith('0')
+                                    ? '+2${company.phone1.toString()}'
+                                    : '+20${company.phone1.toString()}';
+                            return CustomCompanyDetailsAlert(
+                              dialogIcon: 'assets/icons/call.svg',
+                              dialogHeader: 'Phone Number',
+                              dialogBody: formattedPhone,
+                              press: () {
+                                launchCustomUrl(context, 'tel:$formattedPhone');
+                              },
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    CarShowroomsIconCircle(
+                      image: 'assets/icons/Whatsapp.svg',
+                      press: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) {
+                            final formattedPhone =
+                                company.whatsApp1.toString().startsWith('0')
+                                    ? '+2${company.whatsApp1.toString()}'
+                                    : '+20${company.whatsApp1.toString()}';
+                            return CustomCompanyDetailsAlert(
+                              dialogIcon: 'assets/icons/Whatsapp.svg',
+                              dialogHeader: 'WhatsApp',
+                              dialogBody: formattedPhone,
+                              press: () async {
+                                final message = Uri.encodeComponent(
+                                  'Hello, I need assistance with...',
                                 );
-                              } else {
-                                showSnackBar(
+                                final url = Uri.parse(
+                                  'https://wa.me/$formattedPhone?text=$message',
+                                );
+
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(
+                                    url,
+                                    mode: LaunchMode.externalApplication,
+                                  );
+                                } else {
+                                  showSnackBar(
+                                    context,
+                                    'Could not launch WhatsApp.',
+                                  );
+                                }
+                              },
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    CarShowroomsIconCircle(
+                      image: 'assets/icons/face_book.svg',
+                      press: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) {
+                            return CustomCompanyDetailsAlert(
+                              dialogIcon: 'assets/icons/face_book.svg',
+                              dialogHeader: 'Facebook',
+                              dialogBody: company.facebook ?? 'Unknown',
+                              press: () {
+                                launchCustomUrl(
                                   context,
-                                  'Could not launch WhatsApp.',
+                                  company.facebook ?? 'Unknown',
                                 );
-                              }
-                            },
-                          );
-                        },
-                      );
-                    },
-                  ),
-                  CarShowroomsIconCircle(
-                    image: 'assets/icons/face_book.svg',
-                    press: () {
-                      showDialog(
-                        context: context,
-                        builder: (_) {
-                          return CustomCompanyDetailsAlert(
-                            dialogIcon: 'assets/icons/face_book.svg',
-                            dialogHeader: 'Facebook',
-                            dialogBody: company.facebook ?? 'Unknown',
-                            press: () {
-                              launchCustomUrl(
-                                context,
-                                company.facebook ?? 'Unknown',
-                              );
-                            },
-                          );
-                        },
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ],
+                              },
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-          const Spacer(),
         ],
       ),
     );

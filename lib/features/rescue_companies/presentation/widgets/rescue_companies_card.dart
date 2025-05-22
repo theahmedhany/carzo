@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carzo/core/helpers/spacing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -73,15 +74,19 @@ class RescueCompaniesCard extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
-            Text(
-              title,
-              maxLines: 1,
-              style: AppFonts.font18DarkSemiBold.copyWith(
-                overflow: TextOverflow.ellipsis,
+            horizontalSpace(16),
+            Flexible(
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  title,
+                  maxLines: 1,
+                  style: AppFonts.font18DarkSemiBold.copyWith(
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ),
             ),
-            const Spacer(),
           ],
         ),
       ),
