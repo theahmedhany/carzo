@@ -4,18 +4,18 @@ part 'showrooms_model.g.dart';
 
 @JsonSerializable()
 class ShowroomsModel {
-  int? id;
-  String? name;
-  String? pictureUrl;
-  String? phone1;
-  int? phone2;
-  int? phone3;
-  int? whatsApp1;
-  String? facebook;
-  String? instagram;
-  String? branch1;
-  String? branch2;
-  String? branch3;
+  final int? id;
+  final String? name;
+  final String? pictureUrl;
+  final String? phone1;
+  final int? phone2;
+  final int? phone3;
+  final int? whatsApp1;
+  final String? facebook;
+  final String? instagram;
+  final String? branch1;
+  final String? branch2;
+  final String? branch3;
 
   ShowroomsModel({
     this.id,
