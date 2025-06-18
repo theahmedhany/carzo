@@ -4,11 +4,11 @@ part 'sell_personal_car_request_body.g.dart';
 
 @JsonSerializable()
 class SellPersonalCarRequestBody {
-  final List<String> Images;
+  final List<String> Image;
   final String brand;
-  final String Model;
+  final String model;
   final String ManufacturingYear;
-  final String Kilometers;
+  final String Mileage;
   final String Transmission;
   final String FuelType;
   final String Color;
@@ -22,17 +22,17 @@ class SellPersonalCarRequestBody {
   final String AppUserId;
 
   SellPersonalCarRequestBody({
-    required this.Images,
+    required this.Image,
     required this.FuelType,
     required this.Description,
     required this.brand,
     required this.Price,
-    required this.Model,
+    required this.model,
     required this.Location,
     required this.Transmission,
     required this.Color,
     required this.ManufacturingYear,
-    required this.Kilometers,
+    required this.Mileage,
     required this.City,
     required this.SellerEmail,
     required this.ContactInfo,

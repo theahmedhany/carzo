@@ -34,40 +34,43 @@ class CustomBuyNowModelBottomSheet extends StatelessWidget {
                 verticalSpace(22),
                 Row(
                   children: [
-                    ClipOval(
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(27.r),
                       child: Container(
                         width: 54.r,
                         height: 54.r,
                         decoration: BoxDecoration(
-                          color: AppColors.kMainAppColor.withValues(alpha: 0.3),
+                          color: AppColors.kMainAppColor.withAlpha(77),
                           shape: BoxShape.circle,
                           border: Border.all(
                             color: AppColors.kMainTextColor,
                             width: 2.r,
                           ),
                         ),
-                        child: CachedNetworkImage(
-                          imageUrl: details.dealershipImg ?? '',
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: double.infinity,
-                          placeholder: (context, url) {
-                            return const Center(
-                              child: CustomProgressIndicator(),
-                            );
-                          },
-                          errorWidget: (context, url, error) {
-                            return CircleAvatar(
-                              radius: 26.r,
-                              backgroundColor: AppColors.kMainTextColor,
-                              child: Text(
-                                details.dealershipName!
-                                    .substring(0, 2)
-                                    .toUpperCase(),
-                                style: AppFonts.font18WhiteBold,
-                              ),
-                            );
-                          },
+                        child: ClipOval(
+                          child: CachedNetworkImage(
+                            imageUrl: details.dealershipImg ?? '',
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                            height: double.infinity,
+                            placeholder: (context, url) {
+                              return const Center(
+                                child: CustomProgressIndicator(),
+                              );
+                            },
+                            errorWidget: (context, url, error) {
+                              return CircleAvatar(
+                                radius: 27.r,
+                                backgroundColor: AppColors.kMainTextColor,
+                                child: Text(
+                                  details.dealershipName!
+                                      .substring(0, 2)
+                                      .toUpperCase(),
+                                  style: AppFonts.font18WhiteBold,
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ),

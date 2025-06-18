@@ -64,7 +64,7 @@ class _CustomCarDetailsCarImagesState extends State<CustomCarDetailsCarImages> {
                     borderRadius: BorderRadius.circular(15),
                     child: CachedNetworkImage(
                       imageUrl: widget.details.url![index].url!,
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                       width: double.infinity,
                       height: double.infinity,
                       placeholder: (context, url) {

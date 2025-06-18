@@ -7,7 +7,7 @@ class ShowroomsModel {
   int? id;
   String? name;
   String? pictureUrl;
-  int? phone1;
+  String? phone1;
   int? phone2;
   int? phone3;
   int? whatsApp1;

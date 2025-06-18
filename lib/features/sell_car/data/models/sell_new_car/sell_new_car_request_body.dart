@@ -31,6 +31,7 @@ class SellNewCarRequestBody {
   final String HorsePower;
   final String Transmission;
   final String Color;
+  final int EngineCapacity;
 
   SellNewCarRequestBody({
     required this.Images,
@@ -60,6 +61,7 @@ class SellNewCarRequestBody {
     required this.HorsePower,
     required this.Transmission,
     required this.Color,
+    required this.EngineCapacity,
   });
 
   factory SellNewCarRequestBody.fromJson(Map<String, dynamic> json) =>

@@ -36,6 +36,7 @@ SellNewCarRequestBody _$SellNewCarRequestBodyFromJson(
   HorsePower: json['HorsePower'] as String,
   Transmission: json['Transmission'] as String,
   Color: json['Color'] as String,
+  EngineCapacity: (json['EngineCapacity'] as num).toInt(),
 );
 
 Map<String, dynamic> _$SellNewCarRequestBodyToJson(
@@ -68,4 +69,5 @@ Map<String, dynamic> _$SellNewCarRequestBodyToJson(
   'HorsePower': instance.HorsePower,
   'Transmission': instance.Transmission,
   'Color': instance.Color,
+  'EngineCapacity': instance.EngineCapacity,
 };

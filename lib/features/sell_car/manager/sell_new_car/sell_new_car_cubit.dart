@@ -47,6 +47,7 @@ class SellNewCarCubit extends Cubit<SellNewCarState> {
   final TextEditingController horsePowerController = TextEditingController();
   final TextEditingController transmissionController = TextEditingController();
   final TextEditingController colorController = TextEditingController();
+  final TextEditingController engineCapacity = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
@@ -192,6 +193,7 @@ class SellNewCarCubit extends Cubit<SellNewCarState> {
         HorsePower: horsePowerController.text.trim(),
         Transmission: transmissionController.text.trim(),
         Color: colorController.text.trim(),
+        EngineCapacity: int.tryParse(engineCapacity.text.trim()) ?? 0,
       );
 
       final response = await sellNewCarRepo.sellNewCar(requestBody, imagePaths);
@@ -225,6 +227,7 @@ class SellNewCarCubit extends Cubit<SellNewCarState> {
           horsePowerController.clear();
           transmissionController.clear();
           colorController.clear();
+          engineCapacity.clear();
 
           emit(SellNewCarState.success(response));
         },

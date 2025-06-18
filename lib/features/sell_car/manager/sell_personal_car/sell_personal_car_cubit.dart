@@ -159,17 +159,17 @@ class SellPersonalCarCubit extends Cubit<SellPersonalCarState> {
       );
 
       final requestBody = SellPersonalCarRequestBody(
-        Images: imagePaths,
+        Image: imagePaths,
         brand: brandController.text.trim(),
         Price: priceController.text.trim(),
-        Model: modelController.text.trim(),
+        model: modelController.text.trim(),
         Location: locationController.text.trim(),
         FuelType: fuelController.text.trim(),
         Transmission: transmissionController.text.trim(),
         Color: colorController.text.trim(),
         Description: descriptionController.text.trim(),
         ManufacturingYear: yearOfManufactureController.text.trim(),
-        Kilometers: kilometersController.text.trim(),
+        Mileage: kilometersController.text.trim(),
         ContactInfo: contactInfoController.text.trim(),
         City: cityController.text.trim(),
 

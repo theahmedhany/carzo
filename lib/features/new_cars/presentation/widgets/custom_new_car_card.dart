@@ -62,7 +62,7 @@ class CustomNewCarCard extends StatelessWidget {
                       ),
                       child: CachedNetworkImage(
                         imageUrl: imageSrc,
-                        fit: BoxFit.fill,
+                        fit: BoxFit.cover,
                         width: double.infinity,
                         height: double.infinity,
                         placeholder: (context, url) {

@@ -288,6 +288,21 @@ class _SellNewCarsViewState extends State<SellNewCarsView> {
                         verticalSpace(16),
                         CustomSellCarTextField(
                           controller:
+                              context.read<SellNewCarCubit>().engineCapacity,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter a valid value.';
+                            }
+                            return null;
+                          },
+                          keyboardType: TextInputType.number,
+                          title: 'Engine Capacity',
+                          hint: 'Car engine capacity',
+                          icon: 'assets/icons/car-engine.svg',
+                        ),
+                        verticalSpace(16),
+                        CustomSellCarTextField(
+                          controller:
                               context
                                   .read<SellNewCarCubit>()
                                   .trunkSizeController,

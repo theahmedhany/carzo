@@ -58,7 +58,7 @@ class CustomRecommendForYouCard extends StatelessWidget {
                     imageUrl: image,
                     width: 155.w,
                     height: double.infinity,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                     placeholder: (context, url) {
                       return const Center(child: CustomProgressIndicator());
                     },

@@ -11,7 +11,7 @@ ShowroomsModel _$ShowroomsModelFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       pictureUrl: json['pictureUrl'] as String?,
-      phone1: (json['phone1'] as num?)?.toInt(),
+      phone1: json['phone1'] as String?,
       phone2: (json['phone2'] as num?)?.toInt(),
       phone3: (json['phone3'] as num?)?.toInt(),
       whatsApp1: (json['whatsApp1'] as num?)?.toInt(),

@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carzo/core/widgets/custom_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -87,14 +89,27 @@ class SellNewCarBrandsList extends StatelessWidget {
                                           .withValues(alpha: 0.2),
                                       child: Container(
                                         margin: EdgeInsets.all(4.r),
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
-                                          image: DecorationImage(
-                                            image: NetworkImage(
-                                              brand.pictureUrl,
-                                            ),
-                                            fit: BoxFit.contain,
-                                          ),
+                                        ),
+                                        child: CachedNetworkImage(
+                                          imageUrl: brand.pictureUrl,
+                                          fit: BoxFit.fill,
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          placeholder: (context, url) {
+                                            return const Center(
+                                              child: CustomProgressIndicator(),
+                                            );
+                                          },
+                                          errorWidget: (context, url, error) {
+                                            return Center(
+                                              child: Image.asset(
+                                                'assets/master/carzo_logo.png',
+                                                width: 40.w,
+                                              ),
+                                            );
+                                          },
                                         ),
                                       ),
                                     )

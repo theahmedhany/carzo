@@ -18,7 +18,6 @@ class BrandsView extends StatelessWidget {
     ['Kia', 'assets/images/Brands/Kia.png'],
     ['Hyundai', 'assets/images/Brands/Hyundai.png'],
     ['Toyota', 'assets/images/Brands/Toyota.png'],
-    ['Land Cruiser', 'assets/images/Brands/Land-Cruiser.png'],
     ['Nissan', 'assets/images/Brands/Nissan.png'],
     ['Chevrolet', 'assets/images/Brands/Chevrolet.png'],
     ['Renault', 'assets/images/Brands/Renault.png'],
