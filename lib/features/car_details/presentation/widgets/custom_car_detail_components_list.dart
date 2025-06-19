@@ -48,6 +48,11 @@ class CustomCarDetailComponentsList extends StatelessWidget {
                 specs?.transmission ?? 'N/A',
               ],
               [
+                'assets/icons/car-engine.svg',
+                'Engine Capacity',
+                specs?.engineCapacity?.toString() ?? 'N/A',
+              ],
+              [
                 'assets/icons/max-speed.svg',
                 'Max Speed',
                 specs?.topSpeed?.toString() ?? 'N/A',

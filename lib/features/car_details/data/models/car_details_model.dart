@@ -63,6 +63,7 @@ class Specifications {
   int? seats;
   String? drivetrain;
   int? horsePower;
+  int? engineCapacity;
 
   Specifications({
     this.city,
@@ -87,6 +88,7 @@ class Specifications {
     this.seats,
     this.drivetrain,
     this.horsePower,
+    this.engineCapacity,
   });
 
   factory Specifications.fromJson(Map<String, dynamic> json) =>

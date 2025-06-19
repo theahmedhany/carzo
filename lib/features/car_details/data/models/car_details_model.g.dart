@@ -71,6 +71,7 @@ Specifications _$SpecificationsFromJson(Map<String, dynamic> json) =>
       seats: (json['seats'] as num?)?.toInt(),
       drivetrain: json['drivetrain'] as String?,
       horsePower: (json['horsePower'] as num?)?.toInt(),
+      engineCapacity: (json['engineCapacity'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$SpecificationsToJson(Specifications instance) =>
@@ -97,6 +98,7 @@ Map<String, dynamic> _$SpecificationsToJson(Specifications instance) =>
       'seats': instance.seats,
       'drivetrain': instance.drivetrain,
       'horsePower': instance.horsePower,
+      'engineCapacity': instance.engineCapacity,
     };
 
 Url _$UrlFromJson(Map<String, dynamic> json) =>
