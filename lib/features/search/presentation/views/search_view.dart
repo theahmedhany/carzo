@@ -165,7 +165,7 @@ class _SearchViewState extends State<SearchView> {
   }
 
   Widget _buildEmptyResultsMessage() {
-    return SliverFillRemaining(
+    return SliverToBoxAdapter(
       child: Column(children: [verticalSpace(100), const NoCarsAvailable()]),
     );
   }
