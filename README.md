@@ -108,7 +108,7 @@ Carzo transforms the vehicle journey with an elegant user interface, high-perfor
 
 #### To see **Carzo** in action, check out the video below:
 
-[Carzo demo video](https://github.com/user-attachments/assets/57cbbc44-9c99-4942-85e4-9d0286fceb79)
+https://github.com/user-attachments/assets/91b9a90f-4310-41da-ba3c-ac8f0f9226f2
 
 ---
 
